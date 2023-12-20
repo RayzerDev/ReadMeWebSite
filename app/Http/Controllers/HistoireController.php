@@ -57,4 +57,33 @@ class HistoireController extends Controller
         $histoire->save();
         return back();
     }
+
+    public function create(){
+
+        return view('storys.create');
+    }
+
+    public function store(Request  $request){
+        // Valider les données du formulaire
+        $validatedData = $request->validate([
+            'titre' => 'required|string|max:255',
+            'pitch' => 'required|string',
+            'photo' => 'required|url'
+            // ... autres règles de validation ...
+        ]);
+        // Créer une nouvelle instance de l'histoire
+        $histoire = new Histoire([
+            'titre' => $validatedData['titre'],
+            'pitch' => $validatedData['pitch'],
+            'photo' => $validatedData['photo'],
+            'active' =>  0, // Si 'active' n'est pas défini, par défaut, c'est 0 (non coché)
+            'user_id' => Auth::id(),
+            "genre_id" =>1
+        ]);
+        $histoire->save();
+
+
+        // Rediriger avec un message de succès
+        return redirect()->route('storys.index')->with('success', 'L\'histoire a été créée avec succès.');
+    }
 }

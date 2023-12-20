@@ -29,6 +29,7 @@
                 @endif
             @endforeach
         </div>
+        <button><a href="{{route('storys.create')}}">Créer une histoire</a></button>
     </div>
 </x-layout>
 
