@@ -29,7 +29,9 @@
                 @endif
             @endforeach
         </div>
+        @auth()
         <button><a href="{{route('storys.create')}}">Créer une histoire</a></button>
+        @endauth
     </div>
 </x-layout>
 
