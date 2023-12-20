@@ -35,7 +35,3 @@ Route::resource('user', UserController::class)->only('show')->middleware(['auth'
 Route::get('chapitre/{histoire}', [ChapitreController::class, 'show'])->name('chapitres.show');
 Route::resource('avis', AvisController::class)->only(["edit", "destroy", 'update']);
 Route::post('/storys/{histoire}/avis', [AvisController::class, 'store'])->name('avis.store');
-
-
-
-
