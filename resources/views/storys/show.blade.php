@@ -13,8 +13,11 @@
             <label for="favoriCheckbox">Active</label>
 
             <button type="submit">Enregistrer</button>
-        </form>
+        </form>--}}
+            <strong>Le nombre de lecture terminée:</strong> {{ $terminee }}<br>
+            <strong>Le nombre d'avis positif:</strong> {{ $nbAvisPos }}<br>
+            <strong>Ecrit par :</strong> {{ $auteur }}<br>
         </p>
-        <button><a href="{{route('chapitres.show', $histoire->id)}}">Commencer à lire</a></button>
+        <button><a href="{{route('chapitres.show')}}">Commencer à lire</a></button>
     </div>
 </x-layout>
