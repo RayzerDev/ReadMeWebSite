@@ -5,7 +5,7 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 30px;
-    background-color: rgb(226, 165, 43);
+    background-color: rgb(175, 175, 175);
 }
 
 main {
