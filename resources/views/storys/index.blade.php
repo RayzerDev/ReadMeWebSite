@@ -1,0 +1,37 @@
+
+<x-layout titre="Liste des Histoires">
+    <div>
+        <h1>Liste des Histoires</h1>
+        @auth<button><a href="{{route('storys.create')}}">Créer une histoire</a></button>@endauth
+        <p> <strong>Trier par genre</strong>
+        <form action="{{ route('storys.index') }}" method="get" id="filterForm">
+            <div class="input-genre">
+                <div class="mb-3">
+                    <select name="genre" class="form-select form-control bg-white" onchange="document.getElementById('filterForm').submit(); return false;">
+                        <option value="All" @if($genre == 'All') selected @endif>-- Tout les genres --</option>
+                        @foreach($genres as $genreOption)
+                            <option value="{{ $genreOption->id }}" @if($genre == $genreOption->id) selected @endif>
+                                {{ $genreOption->label }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+        </form>
+
+        </p>
+        <div>
+            @foreach ($histoires as $histoire)
+                @if($histoire->active)
+                    <a href="{{ route('storys.show', $histoire->id) }}">
+                        <div>
+                            <img src="{{$histoire->photo}}">
+                            <h5>{{ $histoire->titre }}</h5>
+                        </div>
+                    </a>
+                @endif
+            @endforeach
+        </div>
+    </div>
+</x-layout>
+

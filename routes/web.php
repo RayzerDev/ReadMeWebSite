@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\ChapitreController;
+use App\Http\Controllers\HistoireController;
 use App\Http\Controllers\EquipeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AvisController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name("index");
+Route::get('/', [HistoireController::class, 'accueil'])->name('histoire.accueil');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -26,4 +28,14 @@ Route::get('/test-vite', function () {
     return view('test-vite');
 })->name("test-vite");
 
+Route::resource('storys', HistoireController::class);
+Route::put('/active/{histoire}', [HistoireController::class, 'toggle'])->name('active.toggle');
 Route::resource("equipe", EquipeController::class)->only("index");
+Route::resource('user', UserController::class)->only('show')->middleware(['auth']);
+Route::get('chapitre/{histoire}', [ChapitreController::class, 'show'])->name('chapitres.show');
+Route::resource('avis', AvisController::class)->only(["edit", "destroy", 'update']);
+Route::post('/storys/{histoire}/avis', [AvisController::class, 'store'])->name('avis.store');
+
+
+
+
