@@ -11,6 +11,14 @@ class Histoire extends Model
     use HasFactory;
     public $timestamps = false;
 
+    protected $fillable = [
+        'titre',
+        'pitch',
+        'active',
+        "photo",
+        'user_id',
+        'genre_id'
+    ];
 
     public function user() {
         return $this->belongsTo(User::class);

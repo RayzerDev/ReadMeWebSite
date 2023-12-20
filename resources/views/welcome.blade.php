@@ -1,10 +1,19 @@
-@extends("templates.app")
+@extends('templates.app')
 
 @section('content')
-    <div style="display: flex;align-items: center; justify-content: center">
-        <div>
-            <b>Le marathon du WEB 2023 !!!</b>
-        </div>
-    </div>
+    <div class="container">
+        <h1>ReadMe</h1>
 
+        @if($derniereHistoire)
+            <div>
+                <a href="{{ route('storys.show',$derniereHistoire->id) }}">
+                <h2>{{ $derniereHistoire->titre }}</h2>
+                <p>{{ $derniereHistoire->pitch }}</p>
+                <img src="{{ $derniereHistoire->photo }}" alt="derniereHistoire">
+                </a>
+            </div>
+        @else
+            <p>Aucune histoire disponible pour le moment.</p>
+        @endif
+    </div>
 @endsection

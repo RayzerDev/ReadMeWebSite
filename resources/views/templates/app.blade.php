@@ -10,7 +10,7 @@
 <body>
 <header>Ma super application</header>
 <nav>
-    <a href="{{route('index')}}">Accueil</a>
+    <a href="{{route('storys.index')}}">Accueil</a>
     <a href="{{route('test-vite')}}">Test Vite</a>
     <a href="#">Contact</a>
     <a href="{{route('equipe.index')}}">Equipe</a>
