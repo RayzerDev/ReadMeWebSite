@@ -38,4 +38,3 @@ Route::post('/storys/{histoire}/avis', [AvisController::class, 'store'])->name('
 
 
 
-
