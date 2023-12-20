@@ -7,7 +7,7 @@
         <form action="{{ route('storys.index') }}" method="get" id="filterForm">
             <div class="input-genre">
                 <div class="mb-3">
-                    <select name="genre" class="form-select form-control bg-white">
+                    <select name="genre" class="form-select form-control bg-white" onchange="document.getElementById('filterForm').submit(); return false;">
                         <option value="All" @if($genre == 'All') selected @endif>-- Tout les genres --</option>
                         @foreach($genres as $genreOption)
                             <option value="{{ $genreOption->id }}" @if($genre == $genreOption->id) selected @endif>
@@ -17,7 +17,6 @@
                     </select>
                 </div>
             </div>
-            <input type="submit" value="OK">
         </form>
 
         </p>
