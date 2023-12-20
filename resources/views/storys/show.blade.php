@@ -16,8 +16,8 @@
         </form>--}}
             <strong>Le nombre de lecture terminée:</strong> {{ $terminee }}<br>
             <strong>Le nombre d'avis positif:</strong> {{ $nbAvisPos }}<br>
-            <strong>Ecrit par :</strong> {{ $auteur }}<br>
+            <strong>Ecrit par :</strong> <a href="{{route("user.show",[$histoire->user])}}">{{ $auteur }}</a><br>
         </p>
-        <button><a href="{{route('chapitres.show')}}">Commencer à lire</a></button>
+        <button><a href="{{route('chapitres.show', $histoire)}}">Commencer à lire</a></button>
     </div>
 </x-layout>
