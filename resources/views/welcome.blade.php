@@ -1,4 +1,3 @@
-<!-- resources/views/welcome.blade.php -->
 @extends('templates.app')
 
 @section('content')
@@ -10,7 +9,7 @@
                 <a href="{{ route('storys.show',$derniereHistoire->id) }}">
                 <h2>{{ $derniereHistoire->titre }}</h2>
                 <p>{{ $derniereHistoire->pitch }}</p>
-                <img src="{{ $derniereHistoire->photo }}" alt="Image de la dernière histoire">
+                <img src="{{ $derniereHistoire->photo }}" alt="derniereHistoire">
                 </a>
             </div>
         @else
