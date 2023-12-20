@@ -45,6 +45,10 @@ class HistoireController extends Controller
         }
         return view('storys.show', ['histoire' => $histoire, 'terminee' => $terminee, 'nbAvisPos' => $nbAvisPositif, 'auteur' => $auteur]);
     }
+    public function accueil(){
+        $derniereHistoire = Histoire::latest()->first();
+        return view('welcome', ['derniereHistoire' => $derniereHistoire]);
+    }
 
     public function toggle($idHistoire)
     {
