@@ -9,7 +9,11 @@
 </head>
 <body>
 <header>
+
+
+
 <nav>
+    
     <a href="{{route('storys.index')}}">Accueil</a>
     <a href="{{route('test-vite')}}">Test Vite</a>
     <a href="#">Contact</a>

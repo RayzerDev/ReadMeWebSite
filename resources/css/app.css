@@ -34,6 +34,7 @@ margin-bottom: 3rem;
 }
 
 header{
+    
    
     top: 0;
     left: 0;
@@ -47,12 +48,14 @@ header{
 }
 nav{
     position: fixed;
+
     color: #E9E9E9;
     margin: 0;
     width: 400px;
     border-radius: 25px;
     height: 40px;
     background-color: #2C2B4A;
+margin-top: 20px;
 
 
 }
@@ -60,7 +63,7 @@ a{
     text-decoration: none;
 }
 .basheader{
-    background-image: url("/storage/app/public/images/background.png");
+    background-image: url("/storage/app/public/images/background2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
