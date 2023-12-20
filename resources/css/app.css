@@ -5,7 +5,11 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 30px;
-    background-color: #2C2B4A;
+   
+    margin: 0;
+
+
+  
 }
 
 main {
@@ -27,4 +31,42 @@ footer {
 
 .bouton{
 margin-bottom: 3rem;
+}
+
+header{
+   
+    top: 0;
+    left: 0;
+   
+   
+    width: 100%;
+    height:  fit-content;
+
+ 
+  
+}
+nav{
+    position: fixed;
+    color: #E9E9E9;
+    margin: 0;
+    width: 400px;
+    border-radius: 25px;
+    height: 40px;
+    background-color: #2C2B4A;
+
+
+}
+a{
+    text-decoration: none;
+}
+.basheader{
+    background-image: url("/storage/app/public/images/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+ 
+}
+
+h1{
+    margin:0;
 }

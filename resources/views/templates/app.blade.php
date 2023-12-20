@@ -8,7 +8,7 @@
     @vite(["resources/css/normalize.css", 'resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-<header>Ma super application</header>
+<header>
 <nav>
     <a href="{{route('storys.index')}}">Accueil</a>
     <a href="{{route('test-vite')}}">Test Vite</a>
@@ -27,7 +27,7 @@
         <a href="{{route("register")}}">Register</a>
     @endauth
 </nav>
-
+</header>
 <main>
     @yield("content")
 </main>

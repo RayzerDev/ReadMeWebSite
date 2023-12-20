@@ -12,7 +12,8 @@
     <title>{{$titre ?? "Application Laravel"}}</title>
 </head>
 <body>
-<header>Ma super application</header>
+
+<header>
 <nav>
     <a href="{{route('storys.index')}}">Accueil</a>
     <a href="{{route('test-vite')}}">Test Vite</a>
@@ -30,6 +31,16 @@
         <a href="{{route("register")}}">Register</a>
     @endauth
 </nav>
+
+
+
+<section class="basheader">
+
+<h1>teesstt</h1>
+<button></button>
+</section>
+
+</header>
 <main class="main-container">
     {{$slot}}
 </main>
