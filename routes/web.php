@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChapitreController;
 use App\Http\Controllers\HistoireController;
 use App\Http\Controllers\EquipeController;
 use Illuminate\Support\Facades\Route;
@@ -29,4 +30,4 @@ Route::resource('storys', HistoireController::class);
 Route::put('/active/{histoire}', [HistoireController::class, 'toggle'])->name('active.toggle');
 Route::resource("equipe", EquipeController::class)->only("index");
 Route::get('/histoire/{id}', [HistoireController::class, 'show'])->name('histoire.show');
-Route::get('chapitre/{histoire}', [\App\Http\Controllers\ChapitreController::class, 'show'])->name('chapitres.show');
+Route::resource('chapitre', ChapitreController::class);
