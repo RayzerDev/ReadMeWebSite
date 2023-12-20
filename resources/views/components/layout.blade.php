@@ -33,6 +33,34 @@
 <main class="main-container">
     {{$slot}}
 </main>
-<footer>IUT de Lens</footer>
+<footer>
+    <div>
+        <h2>Pages</h2>
+        <a href="">Accueil</a>
+        <a href="">Thèmes</a>
+        <a href="">Histoires</a>
+        <a href="">Connexion</a>
+    </div>
+    <div>
+        <h2>Contacts</h2>
+        <a href="">Instagram</a>
+        <a href="">Facebook</a>
+        <a href="">Twitter</a>
+        <a href="">Linkedin</a>
+    </div>
+    <div>
+        <h2>Confidentialité</h2>
+        <a href="">Conditions générales</a>
+        <a href="">Vie privée</a>
+        <a href="">Mentions légales</a>
+        <a href="">Données personnelles</a>
+    </div>
+    <div>
+        <h2>Newsletter</h2>
+        <a href="">Logo</a>
+        <input type="search"/>
+        <button>></button>git
+    </div>
+</footer>
 </body>
 </html>
