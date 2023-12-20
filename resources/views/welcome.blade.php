@@ -4,12 +4,12 @@
     <div class="container">
         <h1>ReadMe</h1>
 
-        @if($derniereHistoire)
+        @if($histoire)
             <div>
-                <a href="{{ route('storys.show',$derniereHistoire->id) }}">
-                <h2>{{ $derniereHistoire->titre }}</h2>
-                <p>{{ $derniereHistoire->pitch }}</p>
-                <img src="{{ $derniereHistoire->photo }}" alt="derniereHistoire">
+                <a href="{{ route('storys.show',$histoire->id) }}">
+                <h2>{{ $histoire->titre }}</h2>
+                <p>{{ $histoire->pitch }}</p>
+                <img src="{{ $histoire->photo }}" alt="histoire">
                 </a>
             </div>
         @else
