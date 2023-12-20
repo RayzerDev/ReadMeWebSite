@@ -5,7 +5,7 @@
         <img src="{{$histoire->photo}}">
         <p>
             <strong>Pitch:</strong> {{ $histoire->pitch }}<br>
-        {{--<form method="POST" action="{{ route('active.toggle', ['histoire' => $histoire->id]) }}">
+        <form method="POST" action="{{ route('active.toggle', ['histoire' => $histoire->id]) }}">
             @csrf
             @method('PUT')
 
@@ -18,7 +18,6 @@
             <strong>Le nombre d'avis positif:</strong> {{ $nbAvisPos }}<br>
             <strong>Ecrit par :</strong> {{ $auteur }}<br>
         </p>
-        {{--<button><a href="{{route('chapitres.show')}}">Commencer à lire</a></button>--}}
-
+        <button><a href="{{route('chapitres.show')}}">Commencer à lire</a></button>
     </div>
 </x-layout>
