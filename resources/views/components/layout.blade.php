@@ -68,9 +68,11 @@
     </div>
     <div>
         <h2>Newsletter</h2>
-        <a href="">Logo</a>
-        <input type="search"/>
-        <button>></button>git
+        <a href="{{route('storys.index')}}"><img src = "{{url('storage\images\readme.png')}}"></a>
+        <div>
+            <input type="search"/>
+            <button>></button>
+        </div>
     </div>
 </footer>
 </body>
