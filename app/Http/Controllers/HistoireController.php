@@ -13,14 +13,21 @@ class HistoireController extends Controller
         return view('storys.index', ['histoires' => $histoires]);
     }
 
+    public function show($idHistoire){
+        $histoire = Histoire::find($idHistoire);
+        $terminees = $histoire->terminees;
+        $avis = $histoire->avis->where('histoire_id', $histoire->id);
+        $terminee = 0;
+        $nbAvisPositif = $avis->count();
+        $auteur = $histoire->user->name;
+        foreach ($terminees as $user){
+            $terminee += $user->pivot->nombre;
+        }
+        return view('storys.show', ['histoire' => $histoire, 'terminee' => $terminee, 'nbAvisPos' => $nbAvisPositif, 'auteur' => $auteur]);
+    }
     public function accueil(){
         $derniereHistoire = Histoire::latest()->first();
         return view('welcome', ['derniereHistoire' => $derniereHistoire]);
-    }
-
-    public function show($id){
-        $histoire = Histoire::find($id);
-        return view('storys.show', ['histoire' => $histoire]);
     }
 
     public function toggle($idHistoire)

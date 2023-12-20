@@ -29,3 +29,4 @@ Route::resource('storys', HistoireController::class);
 Route::put('/active/{histoire}', [HistoireController::class, 'toggle'])->name('active.toggle');
 Route::resource("equipe", EquipeController::class)->only("index");
 Route::get('/histoire/{id}', [HistoireController::class, 'show'])->name('histoire.show');
+Route::get('chapitre/{histoire}', [\App\Http\Controllers\ChapitreController::class, 'show'])->name('chapitres.show');
