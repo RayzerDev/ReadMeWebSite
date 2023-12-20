@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name("index");
+Route::get('/', [HistoireController::class, 'accueil'])->name('histoire.accueil');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -27,6 +25,7 @@ Route::get('/test-vite', function () {
     return view('test-vite');
 })->name("test-vite");
 
-Route::resource('/storys', HistoireController::class);
+Route::resource('storys', HistoireController::class);
 Route::put('/active/{histoire}', [HistoireController::class, 'toggle'])->name('active.toggle');
 Route::resource("equipe", EquipeController::class)->only("index");
+Route::get('/histoire/{id}', [HistoireController::class, 'show'])->name('histoire.show');
