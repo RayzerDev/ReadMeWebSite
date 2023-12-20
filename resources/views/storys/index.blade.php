@@ -23,18 +23,6 @@
                     <div>
                         <img src="{{$histoire->photo}}">
                         <h5>{{ $histoire->titre }}</h5>
-                        <p>
-                            <strong>Pitch:</strong> {{ $histoire->pitch }}<br>
-                        <form method="POST" action="{{ route('active.toggle', ['histoire' => $histoire->id]) }}">
-                            @csrf
-                            @method('PUT')
-
-                            <input type="checkbox" name="active" {{ $histoire->active ? 'checked' : '' }}>
-                            <label for="favoriCheckbox">Active</label>
-
-                            <button type="submit">Enregistrer</button>
-                        </form>
-                        </p>
                     </div>
                 </a>
             @endforeach

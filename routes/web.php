@@ -30,3 +30,4 @@ Route::get('/test-vite', function () {
 Route::resource('/storys', HistoireController::class);
 Route::put('/active/{histoire}', [HistoireController::class, 'toggle'])->name('active.toggle');
 Route::resource("equipe", EquipeController::class)->only("index");
+Route::get('chapitre/{histoire}', [\App\Http\Controllers\ChapitreController::class, 'show'])->name('chapitres.show');

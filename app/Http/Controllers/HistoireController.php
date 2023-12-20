@@ -13,9 +13,10 @@ class HistoireController extends Controller
         return view('storys.index', ['histoires' => $histoires]);
     }
 
-    public function show(){
-
-}
+    public function show($idHistoire){
+        $histoire = Histoire::find($idHistoire);
+        return view('storys.show', ['histoire' => $histoire]);
+    }
 
     public function toggle($idHistoire)
     {
