@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HistoireController;
 use App\Http\Controllers\EquipeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,5 +29,6 @@ Route::get('/test-vite', function () {
 Route::resource('storys', HistoireController::class);
 Route::put('/active/{histoire}', [HistoireController::class, 'toggle'])->name('active.toggle');
 Route::resource("equipe", EquipeController::class)->only("index");
+Route::resource('user', UserController::class)->only('show')->middleware(['auth']);
 Route::get('/histoire/{id}', [HistoireController::class, 'show'])->name('histoire.show');
 Route::get('chapitre/{histoire}', [\App\Http\Controllers\ChapitreController::class, 'show'])->name('chapitres.show');
