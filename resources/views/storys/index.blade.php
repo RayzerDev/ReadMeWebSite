@@ -21,13 +21,19 @@
             @foreach ($histoires as $histoire)
                 <a href="{{ route('storys.show', $histoire->id) }}">
                     <div>
-                        <h5>{{ $histoire->nom }}</h5>
+                        <img src="{{$histoire->photo}}">
+                        <h5>{{ $histoire->titre }}</h5>
                         <p>
-                            <strong>Équipe:</strong> {{ $scene->equipe }}<br>
-                            <strong>Date d'Ajout:</strong> {{ $scene->created_at }}<br>
-                            @if(isset($scene->average_rating) && $scene->average_rating > 0)
-                                <strong>Note moyenne:</strong> {{ $scene->average_rating }}<br>
-                            @endif
+                            <strong>Pitch:</strong> {{ $histoire->pitch }}<br>
+                        <form method="POST" action="{{ route('active.toggle', ['histoire' => $histoire->id]) }}">
+                            @csrf
+                            @method('PUT')
+
+                            <input type="checkbox" name="active" {{ $histoire->active ? 'checked' : '' }}>
+                            <label for="favoriCheckbox">Active</label>
+
+                            <button type="submit">Enregistrer</button>
+                        </form>
                         </p>
                     </div>
                 </a>

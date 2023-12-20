@@ -27,3 +27,4 @@ Route::get('/test-vite', function () {
 })->name("test-vite");
 
 Route::resource('/storys', HistoireController::class);
+Route::put('/active/{histoire}', [HistoireController::class, 'toggle'])->name('active.toggle');
