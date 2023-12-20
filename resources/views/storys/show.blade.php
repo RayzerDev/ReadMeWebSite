@@ -18,6 +18,6 @@
             <strong>Le nombre d'avis positif:</strong> {{ $nbAvisPos }}<br>
             <strong>Ecrit par :</strong> <a href="{{route("user.show",[$histoire->user])}}">{{ $auteur }}</a><br>
         </p>
-        <button><a href="{{route('chapitres.show', $histoire)}}">Commencer à lire</a></button>
+        <button class='bouton'><a href="{{route('chapitres.show', $histoire->id)}}">Commencer à lire</a></button>
     </div>
 </x-layout>
