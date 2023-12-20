@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Genre;
 use App\Models\Histoire;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +27,7 @@ class HistoireController extends Controller
             $histoires = Histoire::where('genre_id', $genre)->get();
             Cookie::queue('genre', $genre, 10);
         }
-        $genres = Histoire::distinct('genre_id')->pluck('genre_id');
+        $genres = Genre::all();
 
         return view('storys.index',
             ['histoires' => $histoires, 'genre' => $genre, 'genres' => $genres]);

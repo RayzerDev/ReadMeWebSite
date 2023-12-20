@@ -10,8 +10,10 @@ class Avis extends Model
     use HasFactory;
     protected $table = "avis";
 
-        public function user() {
+    public function user() {
         return $this->belongsTo(User::class);
     }
-    
+    public function histoire() {
+        return $this->belongsTo(Histoire::class);
+    }
 }
