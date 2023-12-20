@@ -2,31 +2,34 @@
 <x-layout titre="Liste des Histoires">
     <div>
         <h1>Liste des Histoires</h1>
-        {{--<form action="{{route('scenes.index')}}" method="get" id="filterForm">
-            <div class="input-group">
+        <p> <strong>Trier par genre</strong>
+        <form action="{{route('storys.index')}}" method="get" id="filterForm">
+            <div class="input-genre">
                 <div class="mb-3">
-                    <select name="cat" class="form-select form-control bg-white" onchange="submitForm()">
-                        <option value="All" @if($cat == 'All') selected @endif>-- Toutes équipes --</option>
-                        @foreach($equipes as $equipe)
-                            <option value="{{$equipe}}" @if($cat == $equipe) selected @endif>{{$equipe}}</option>
+                    <select name="genre" class="form-select form-control bg-white">
+                        <option value="All" @if($genre == 'All') selected @endif>-- Tout les genres --</option>
+                        @foreach($genres as $genreOption)
+                            <option value="{{ $genreOption }}" @if($genre == $genreOption) selected @endif>{{ $genreOption }}</option>
                         @endforeach
                     </select>
                 </div>
-                <a href="{{ route('scenes.index', ['recent' => 1]) }}" class="custom-button text-decoration-none d-flex align-items-center">Les 5 + récents</a>
-                <a href="{{ route('scenes.index', ['top_rated' => 1]) }}" class="custom-button text-decoration-none d-flex align-items-center">Les 5 + notées</a>
             </div>
-        </form>--}}
-
+            <input type="submit" value="OK">
+        </form>
+        </p>
         <div>
             @foreach ($histoires as $histoire)
-                <a href="{{ route('storys.show', $histoire->id) }}">
-                    <div>
-                        <img src="{{$histoire->photo}}">
-                        <h5>{{ $histoire->titre }}</h5>
-                    </div>
-                </a>
+                @if($histoire->active)
+                    <a href="{{ route('storys.show', $histoire->id) }}">
+                        <div>
+                            <img src="{{$histoire->photo}}">
+                            <h5>{{ $histoire->titre }}</h5>
+                        </div>
+                    </a>
+                @endif
             @endforeach
         </div>
+        <button><a href="{{route('storys.create')}}">Créer une histoire</a></button>
     </div>
 </x-layout>
 
