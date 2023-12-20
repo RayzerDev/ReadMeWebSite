@@ -35,7 +35,7 @@ cp .env.example .env
 # DB_USERNAME=root
 # DB_PASSWORD=
 #
-#
+
 #########################################################
 
 # Génération de la clé initiale
