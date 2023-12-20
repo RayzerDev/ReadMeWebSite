@@ -10,9 +10,9 @@ body {
 
 main {
     min-height: 80vh;
-    display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 50px;
 }
 
 footer {
@@ -23,4 +23,8 @@ footer {
     /* Set the fixed height of the footer here */
     height: 30px;
     background-color: #f5f5f5;
+}
+
+.bouton{
+margin-bottom: 3rem;
 }
