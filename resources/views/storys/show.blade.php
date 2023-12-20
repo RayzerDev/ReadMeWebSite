@@ -15,6 +15,6 @@
             <button type="submit">Enregistrer</button>
         </form>
         </p>
-        <button><a href="{{route('chapitres.show')}}">Commencer à lire</a></button>
+        <button><a href="{{route('chapitres.show', $histoire->id)}}">Commencer à lire</a></button>
     </div>
 </x-layout>
