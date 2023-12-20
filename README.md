@@ -1,6 +1,6 @@
 ## Histoires dont vous êtes le héros
 
-Groupe test but23_groupe2s
+Groupe test but23_groupe2
 
 ## Version initiale
 
