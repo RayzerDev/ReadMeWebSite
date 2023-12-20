@@ -2,6 +2,7 @@
 <x-layout titre="Liste des Histoires">
     <div>
         <h1>Liste des Histoires</h1>
+        @auth<button><a href="{{route('storys.create')}}">Créer une histoire</a></button>@endauth
         <p> <strong>Trier par genre</strong>
         <form action="{{route('storys.index')}}" method="get" id="filterForm">
             <div class="input-genre">
@@ -29,7 +30,6 @@
                 @endif
             @endforeach
         </div>
-        <button><a href="{{route('storys.create')}}">Créer une histoire</a></button>
     </div>
 </x-layout>
 
