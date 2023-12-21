@@ -21,13 +21,13 @@
 <header>
 <div class="lignehaut">
 
-<a href="/"><img class="img1" src = "{{url('storage\images\readme.png')}}"></a>
+<a href="/"><img class="img1" src = "{{url('storage\images\readme_blanc.png')}}"></a>
 
 <nav>
     <a href="{{route('accueil')}}">Accueil</a>
     <a href="#">Thèmes</a>
     <a href="{{route('histoires.index')}}">Histoires</a>
-    <a href="{{route('equipe.index')}}">Equipe</a>
+    <a href="{{route('equipe.index')}}">Vos histoires</a>
     @auth
         {{Auth::user()->name}}
         <a href="{{route("logout")}}"
