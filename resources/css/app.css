@@ -73,3 +73,15 @@ a{
 h1{
     margin:0;
 }
+
+footer{
+    background-color: #CF69FF;
+    height: fit-content;
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+footer a{
+    color: white;
+}
