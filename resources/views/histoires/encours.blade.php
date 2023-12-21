@@ -71,16 +71,59 @@
                    <input type="checkbox" class="form-control" id="premier" name="premier">
                </div>
                <button type="submit" class="btn btn-primary">Valider</button>
-               <a href="{{route('accueil')}}" class="btn btn-secondary">Retour</a>
            </form>
-
-        @foreach($histoire->chapitres as $c)
-        {{$c->id}}: {{$c->titrecourt}} {{$c->question}}
-    @endforeach
    </div>
 <div>
    <h3>Les liaisons</h3>
+    <form action="{{ route('liaisons.store')}}" method="POST">
+        @csrf
+        <label for="choix">Source :</label>
+        <select id="source" name="source">
+            @foreach($histoire->chapitres as $c)
+                <option value="{{ $c->id  }}">{{ $c->id . " : " . $c->titrecourt}}</option>
+            @endforeach
+        </select>
+        <label for="choix">Destination :</label>
+        <select id="destination" name="destination">
+            @foreach($histoire->chapitres as $c)
+                <option value="{{ $c->id  }}">{{ $c->id . " : " . $c->titrecourt}}</option>
+            @endforeach
+        </select>
+        <div class="form-group">
+            <label for="reponse">Réponse</label>
+            <input type="text" class="form-control" id="reponse" name="reponse" rows="3" value="{{old("reponse")}}">
+        </div>
+        <button type="submit" class="btn btn-primary">Valider</button>
+    </form>
+    <table>
+        <thead>
+        <tr>
+            <th>Source</th>
+            <th>Réponse</th>
+            <th>Destination</th>
+            <th>Supprimer</th>
+        </tr>
+        </thead>
+        <tbody>
+        @forelse($histoire->chapitres as $source)
+            @forelse($source->suivants as $destination)
+            <tr>
+                <td>{{ $source->id . $source->titrecourt }}</td>
+                <td>{{ $destination->pivot->reponse }}</td>
+                <td>{{ $destination->id . $destination->titrecourt }}</td>
+                <td><form method="post" action="{{ route('liaisons.delete') }}" class="d-inline">
+                        @csrf
+                        @method('DELETE')
+                        <input type="hidden" value="{{$source->id}}" name="source">
+                        <input type="hidden" value="{{$destination->id}}" name="destination">
+                        <button type="submit" class="btn btn-sm btn-danger">Supprimer</button></form></td>
+            </tr>
+            @empty
+            @endforelse
+        @empty
+        @endforelse
+        </tbody>
+    </table>
 </div>
-
 </div>
 @endsection

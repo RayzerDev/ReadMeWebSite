@@ -52,4 +52,39 @@ class ChapitreController extends Controller
         $chapitre ->save();
         return back();
     }
+
+    public function destroy(Chapitre $chapitre)
+    {
+        $chapitre->delete();
+
+        return redirect()->route('histoires.encours', $chapitre->histoire_id)->with('success', 'Avis supprimé avec succès.');
+    }
+
+    public function storeLiaison(Request $request){
+        $this->validate($request, [
+            'source' => 'required',
+            'reponse' => 'required',
+            'destination' => 'required',
+        ]);
+        if($request->source != $request->destination){
+            DB::table("suites")->insert([
+                "chapitre_source_id" => $request->source,
+                "reponse" => $request->reponse,
+                "chapitre_destination_id" => $request->destination,
+                ]);
+        }
+        return redirect()->back();
+    }
+    public function deleteLiaison(Request $request)
+    {
+        $this->validate($request, [
+            'source' => 'required',
+            'destination' => 'required'
+        ]);
+        DB::table("suites")
+        ->where("chapitre_source_id",$request->source)
+        ->where("chapitre_destination_id",$request->destination)
+        ->delete();;
+        return redirect()->back();
+    }
 }
