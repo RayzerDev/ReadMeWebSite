@@ -40,7 +40,7 @@ class ChapitreController extends Controller
         $chapitre ->texte = $request->texte;
         $chapitre ->question = $request->question;
         $chapitre ->media = $request->media;
-        $chapitre ->premier = $request->premier ?? false;
+        $chapitre->premier = $request->filled('premier') ? true : false;
         $chapitre ->save();
         return view('chapitres.show', ['chapitre' => $chapitre, 'title' => $chapitre->titrecourt]);
     }
@@ -62,7 +62,7 @@ class ChapitreController extends Controller
         $chapitre ->question = $request->question;
         $chapitre ->media = $request->media;
         $chapitre ->histoire_id = $request->histoire_id;
-        $chapitre ->premier = $request->premier ?? false;
+        $chapitre->premier = $request->filled('premier') ? true : false;
         $chapitre ->save();
         return back();
     }
