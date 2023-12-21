@@ -27,7 +27,9 @@
     <a href="{{route('accueil')}}">Accueil</a>
     <a href="{{ route('genres.index') }}">Thèmes</a>
     <a href="{{route('histoires.index')}}">Histoires</a>
-    <a href="{{route('histoires.create')}}">Nouvelle histoire</a>
+    @auth
+        <a href="{{ route('histoires.create') }}">Nouvelle histoire</a>
+    @endauth
 </nav>
 @auth
     <a href="{{route("user.show", Auth::user())}}"><img class="img2" src = "{{url('storage\images\iconecompte.png')}}"></a>

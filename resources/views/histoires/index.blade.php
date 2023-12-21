@@ -39,7 +39,7 @@
                 @if($histoire->active)
                     <a href="{{ route('histoires.show', $histoire) }}">
                         <div>
-                            <img src="{{url($histoire->photo)}}">
+                            <img src="{{ $histoire->photo }}">
                             <h5>{{ $histoire->titre }}</h5>
                         </div>
                     </a>
