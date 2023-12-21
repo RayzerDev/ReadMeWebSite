@@ -10,7 +10,7 @@
         <ul>
             @foreach($equipe['membres'] as $membre)
                 <li>
-                    <img src="{{ "storage/" . $membre['image'] }}" alt="{{ $membre['nom'] }} {{ $membre['prenom'] }}" width="150px">
+                    <img src="{{ "storage/" . $membre['image'] }}" alt="{{ $membre['nom'] }} {{ $membre['prenom'] }}">
                     <p><strong>Nom:</strong> {{ $membre['nom'] }} {{ $membre['prenom'] }}</p>
                     <p><strong>Fonctions:</strong> {{ implode(', ', $membre['fonctions']) }}</p>
                 </li>

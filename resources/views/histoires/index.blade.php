@@ -45,14 +45,14 @@
         </form>
 
         </p>
-        
-            <div class='caroussels'>
+        <div class='wraper'>
+            <div class='caroussel'>
             @foreach ($histoires as $histoire)
             <!-- <div class='hiistoires'> -->
                 @if($histoire->active)
                 <div class="hiistoires"> 
                     <a href="{{ route('histoires.show', $histoire) }}">
-                        
+                        <div>
                             <img src="{{$histoire->photo}}">
                             <h5>{{ $histoire->titre }}</h5>
                         </div>

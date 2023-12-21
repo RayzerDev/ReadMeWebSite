@@ -156,7 +156,17 @@ footer{
     text-decoration: none;
     text-transform: capitalize;
     display: flex;
-    justify-content: space-between;
+
+    padding-bottom: 20px;
+
+
+}
+.footer-taille{
+    margin-right: 5%;
+    margin-left: 5%;
+width: 90%;
+display: flex;
+justify-content: space-between;
 
 }
 
@@ -165,6 +175,8 @@ footer{
 footer a{
     color:white;
     display: block;
+    font-weight: 100;
+    
 
     text-decoration: none;
 }
@@ -189,6 +201,7 @@ footer input[type="mail"] {
     border-radius: 5px;
     margin-right: 10px; /* Espace entre l'input et le bouton */
     padding-right: 1.4rem;
+    border-radius: 30px;
 }
 
 footer button {
@@ -202,6 +215,16 @@ footer button {
     margin-left: -1.8rem;
     padding-block: 0.25rem;
     font-size: 1rem;
+}
+
+
+.newsletter {
+    position: relative;
+}
+
+.newsletterbutton{
+    position: absolute;
+    right: 10px;
 }
 
 
@@ -258,8 +281,9 @@ width: 60px;
     text-align: end;
     font-family: 'League Spartan', sans-serif;
     font-weight: 700;
-
+padding-top: 180px;
     font-size: 300%;
+    margin-right: 40px;
 }
 
 .butonindex{
@@ -563,6 +587,13 @@ width: fit-content;
     font-size: 25px;
 }
 
+.tagsbtn a {
+      color: white;
+    
+
+    border-radius: 30px;
+}
+
 
 
 /* login page  */
@@ -726,4 +757,37 @@ option{
 .hiistoires a{
     color: white;
     font-family: 'League Spartan';
+}
+
+.couleur{
+    color: white
+}
+
+#valider{
+    background-color: #CF69FF;
+    color: white;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+}
+
+.formecreer{    
+    background-color: #1e1e32;
+    border: solid 1px white;
+    border-radius: 20px;
+    max-width: 320px;
+    padding: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form5{
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 120px;
 }

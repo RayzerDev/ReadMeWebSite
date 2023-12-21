@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Genre;
 use App\Models\Histoire;
+use App\Models\Sport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class HistoireController extends Controller
 {
@@ -33,7 +35,8 @@ class HistoireController extends Controller
     }
 
     public function accueil(){
-        return view('welcome', ['title'=>"Accueil"]);
+        $histoireAccueil = Histoire::inRandomOrder()->take(5)->get();
+        return view('welcome', ['title'=>"Accueil" , 'histoireAccueil' => $histoireAccueil]);
     }
 
     public function afficherGenre(){
@@ -60,15 +63,29 @@ class HistoireController extends Controller
         return view('histoires.create');
     }
 
-    public function store(Request  $request){
-        $histoire = new Histoire([
-            'titre' => $request['titre'],
-            'pitch' => $request['pitch'],
-            'photo' => $request['photo'],
-            'active' =>  0,
-            'user_id' => Auth::id(),
-            "genre_id" =>1
+    public function store(Request $request){
+        $request->validate([
+            'titre' => 'required|string',
+            'pitch' => 'required|string',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+
+        $subdirectory = 'storage/histoires/photos';
+        if (!file_exists(public_path($subdirectory))) {
+            mkdir(public_path($subdirectory), 0755, true);
+        }
+
+        $uniqueFileName = uniqid().'.'.$request->file('photo')->getClientOriginalExtension();
+        $request->file('photo')->move(public_path($subdirectory), $uniqueFileName);
+        $histoire = new Histoire([
+            'titre' => $request->input('titre'),
+            'pitch' => $request->input('pitch'),
+            'photo' => $subdirectory.'/'.$uniqueFileName,
+            'active' => 0,
+            'user_id' => Auth::id(),
+            'genre_id' => 1,
+        ]);
+
         $histoire->save();
         return redirect()->route('histoires.encours', $histoire->id);
     }
@@ -77,4 +94,5 @@ class HistoireController extends Controller
         $histoire= Histoire::findOrFail($id);
         return view('histoires.encours', ['histoire' => $histoire, 'title' => "Histoire en cours de création "]);
     }
+
 }

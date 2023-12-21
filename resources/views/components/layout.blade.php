@@ -21,25 +21,27 @@
 <header>
 <div class="lignehaut">
 
-<a href="{{route('accueil')}}"><img class="img1" src = "{{url('storage\images\readme.png')}}"></a>
+<a href="{{route('accueil')}}"><img class="img1" src = "{{url('storage\images\readme_blanc.png')}}"></a>
 
 <nav>
     <a href="{{route('accueil')}}">Accueil</a>
-    <a href="#">Thèmes</a>
+    <a href="{{ route('genres.index') }}">Thèmes</a>
     <a href="{{route('histoires.index')}}">Histoires</a>
-    <a href="{{route('equipe.index')}}">Vos histoires</a>
     @auth
-        {{Auth::user()->name}}
-        <a href="{{route("logout")}}"
-           onclick="document.getElementById('logout').submit(); return false;">Logout</a>
-        <form id="logout" action="{{route("logout")}}" method="post">
-            @csrf
-        </form>
-        <a href="{{route('histoires.create')}}">Nouvelle histoire</a>
+        <a href="{{ route('histoires.create') }}">Nouvelle histoire</a>
     @endauth
 </nav>
-<a href="{{route("login")}}"><img class="img2" src = "{{url('storage\images\iconecompte.png')}}"></a>
-
+@auth
+    <a href="{{route("user.show", Auth::user())}}"><img class="img2" src = "{{url('storage\images\iconecompte.png')}}"></a>
+    <a href="{{route("logout")}}"
+       onclick="document.getElementById('logout').submit(); return false;">Logout</a>
+    <form id="logout" action="{{route("logout")}}" method="post">
+        @csrf
+    </form>
+@endauth
+    @guest
+        <a href="{{route("login")}}"><img class="img2" src = "{{url('storage\images\iconecompte.png')}}"></a>
+    @endguest
 </div>
 
 
@@ -62,7 +64,7 @@
 
 
 <main class="main-container">
-   
+
 
 
 
@@ -77,12 +79,14 @@
 </main>
 
 <footer>
-    <div>
+    <div class=" footer-taille">
+        <div>
         <h2>Pages</h2>
         <a href="">Accueil</a>
         <a href="">Thèmes</a>
         <a href="">Histoires</a>
         <a href="">Connexion</a>
+
     </div>
     <div>
         <h2>Contacts</h2>
@@ -98,13 +102,14 @@
         <a href="">Mentions légales</a>
         <a href="">Données personnelles</a>
     </div>
-    <div>
+    <div >
         <h2>Newsletter</h2>
         <a href="{{route('histoires.index')}}"><img src = "{{url('storage\images\readme_blanc.png')}}"></a>
-        <div>
-            <input type="mail"/>
-            <button>></button>
+        <div class="newsletter">
+            <input type="mail" />
+            <button class="newsletterbutton">></button>
         </div>
+    </div>
     </div>
 </footer>
 
