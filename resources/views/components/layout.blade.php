@@ -38,7 +38,7 @@
         <a href="{{route('histoires.create')}}">Nouvelle histoire</a>
     @endauth
 </nav>
-<a href="{{route("login")}}"><img class="img2" src = "{{url('storage\images\iconecompte.png')}}"></a>
+<a href="{{route("user.show", Auth::user())}}"><img class="img2" src = "{{url('storage\images\iconecompte.png')}}"></a>
 
 </div>
 
