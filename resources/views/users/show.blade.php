@@ -10,7 +10,7 @@
                         <div class="card">
                             <p>{{$histoire->titre}}</p>
                             <p>{{$histoire->pitch}}</p>
-                            <img src="{{$histoire->image}}"/>
+                            <img src="{{url($histoire->photo)}}"/>
                             <a href="{{route("histoires.show", $histoire)}}">Voir l'histoire</a>
                         </div>
                     @empty
@@ -24,7 +24,7 @@
             <h2>Ses histoires</h2>
             @forelse($user->mesHistoires as $histoire)
                 <div class="card">
-                    <img src="{{$histoire->image}}" alt="Image histoire"/>
+                    <img src="{{url($histoire->photo)}}" alt="Image histoire"/>
                     <p>{{$histoire->titre}}</p>
                     <p>{{$histoire->pitch}}</p>
                     <p>{{$histoire->active ? "Active" : "Non active"}}</p>
