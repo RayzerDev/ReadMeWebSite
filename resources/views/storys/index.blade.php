@@ -1,5 +1,7 @@
-
-<x-layout titre="Liste des Histoires">
+<x-layout>
+    @section('title')
+        Histoires
+    @endsection
     <div class='coups2coeur'>
         <h1>Vos coups de coeur</h1>
         <img class='souligne' src="{{url('storage\images\Vector 7.png')}}">
