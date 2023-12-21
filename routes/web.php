@@ -33,4 +33,6 @@ Route::resource('avis', AvisController::class)->only(["edit", "destroy", 'update
 Route::post('/histoires/{histoire}/avis', [AvisController::class, 'store'])->name('avis.store');
 Route::resource('chapitres', ChapitreController::class);
 Route::get('encours/{id}', [HistoireController::class, 'encours'])->name('histoires.encours');
+Route::delete('liaisons', [ChapitreController::class,'deleteLiaison'])->name("liaisons.delete");
+Route::post('liaisons', [ChapitreController::class, 'storeLiaison'])->name("liaisons.store");
 Route::resource('/genres', GenreController::class);

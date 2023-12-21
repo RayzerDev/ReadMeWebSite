@@ -21,7 +21,7 @@
 <header>
 <div class="lignehaut">
 
-<a href="{{route('accueil')}}"><img class="img1" src = "{{url('storage\images\readme.png')}}"></a>
+<a href="{{route('accueil')}}"><img class="img1" src = "{{url('storage\images\readme_blanc.png')}}"></a>
 
 <nav>
     <a href="{{route('accueil')}}">Accueil</a>
