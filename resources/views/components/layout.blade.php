@@ -16,7 +16,7 @@
 <header>
 <div class="lignehaut">
 
-<img class ="img1" src="https://images.bfmtv.com/NUJHUYUkXAYVPZAR888_w9rjrNc=/0x0:1196x1192/1196x0/images/-458880.jpg" alt="" srcset="" width="30%">
+<a href="{{route('storys.index')}}"><img src = "{{url('storage\images\readme.png')}}"></a>
 <nav>
     <a href="{{route('storys.index')}}">Accueil</a>
     <a href="{{route('test-vite')}}">Test Vite</a>
@@ -35,7 +35,7 @@
     @endauth
 </nav>
 
-<img class ="img2" src="/storage/app/public/images/iconecompte.png" alt="" srcset="">
+<a href="{{route('storys.index')}}"><img src = "{{url('storage\images\iconecompte.png')}}"></a>
 </div>
 
 
