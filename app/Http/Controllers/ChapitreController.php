@@ -21,9 +21,12 @@ class ChapitreController extends Controller
 
     public function update(Request $request, $id){
         $chapitre = Chapitre::find($id);
+        $chapitre ->titre =  $request->titre;
         $chapitre ->titrecourt =  $request->titrecourt;
         $chapitre ->texte = $request->texte;
+        $chapitre ->question = $request->question;
         $chapitre ->media = $request->media;
+        $chapitre ->premier = $request->premier ?? false;
         $chapitre ->save();
         return view('chapitres.show', ['chapitre' => $chapitre, 'title' => $chapitre->titrecourt]);
     }
