@@ -69,7 +69,7 @@ class HistoireController extends Controller
             'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $subdirectory = 'storage/histoires/images';
+        $subdirectory = 'storage/histoires/photos';
         if (!file_exists(public_path($subdirectory))) {
             mkdir(public_path($subdirectory), 0755, true);
         }
