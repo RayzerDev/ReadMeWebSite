@@ -10,10 +10,10 @@
     <ul>
         @foreach($chapitre->suivants as $c)
              <li>
-                 <a href="{{route('chapitre.show', $c->pivot->chapitre_destination_id)}}">{{$c->pivot->reponse}}</a>
+                 <a href="{{route('chapitres.show', $c->pivot->chapitre_destination_id)}}">{{$c->pivot->reponse}}</a>
              </li>
         @endforeach
     </ul>
-        <a href="{{route('chapitre.edit', $chapitre->id)}}">Editer le chapitre</a>
+        <a href="{{route('chapitres.edit', $chapitre->id)}}">Editer le chapitre</a>
     </div>
 @endsection

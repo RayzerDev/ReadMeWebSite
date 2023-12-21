@@ -10,21 +10,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-    @vite(['resources/css/test-vite.css', 'resources/js/test-vite.js', 'resources/css/app.css'])
-    <title>{{$titre ?? "Application Laravel"}}</title>
+
+    @vite(['resources/css/test-vite.css', 'resources/js/test-vite.js', 'resources/css/app.css', 'resources/js/script.js'])
+    <title>@yield('title')</title>
 </head>
 <body>
 
 <header>
 <div class="lignehaut">
 
-<a href="{{route('storys.index')}}"><img class="img1" src = "{{url('storage\images\readme.png')}}"></a>
+<a href="/"><img class="img1" src = "{{url('storage\images\readme.png')}}"></a>
 
 <nav>
-    <a href="{{route('storys.index')}}">Accueil</a>
-    <a href="{{route('test-vite')}}">Test Vite</a>
-    <a href="{{route('contact')}}">Contact</a>
+    <a href="{{route('accueil')}}">Accueil</a>
+    <a href="#">Thèmes</a>
+    <a href="{{route('histoires.index')}}">Histoires</a>
     <a href="{{route('equipe.index')}}">Equipe</a>
     @auth
         {{Auth::user()->name}}
@@ -33,12 +35,9 @@
         <form id="logout" action="{{route("logout")}}" method="post">
             @csrf
         </form>
-    @else
-        <a href="{{route("login")}}">Login</a>
-        <a href="{{route("register")}}">Register</a>
     @endauth
 </nav>
-<a href="{{route('storys.index')}}"><img class="img2" src = "{{url('storage\images\iconecompte.png')}}"></a>
+<a href="{{route("login")}}"><img class="img2" src = "{{url('storage\images\iconecompte.png')}}"></a>
 
 </div>
 
@@ -70,37 +69,8 @@
 
 
 {{$slot}}
+
 </main>
-<footer>
-    <div>
-        <h2>Pages</h2>
-        <a href="">Accueil</a>
-        <a href="">Thèmes</a>
-        <a href="">Histoires</a>
-        <a href="">Connexion</a>
-    </div>
-    <div>
-        <h2>Contacts</h2>
-        <a href="">Instagram</a>
-        <a href="">Facebook</a>
-        <a href="">Twitter</a>
-        <a href="">Linkedin</a>
-    </div>
-    <div>
-        <h2>Confidentialité</h2>
-        <a href="">Conditions générales</a>
-        <a href="">Vie privée</a>
-        <a href="">Mentions légales</a>
-        <a href="">Données personnelles</a>
-    </div>
-    <div>
-        <h2>Newsletter</h2>
-        <a href="{{route('storys.index')}}"><img src = "{{url('storage\images\readme_blanc.png')}}"></a>
-        <div>
-            <input type="mail"/>
-            <button>></button>
-        </div>
-    </div>
-</footer>
+
 </body>
 </html>

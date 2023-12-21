@@ -6,12 +6,12 @@
             <div class="container">
                 <h2>Mes lectures en cours</h2>
                 <div>
-                    @forelse($user->lectures as $story)
+                    @forelse($user->lectures as $histoire)
                         <div class="card">
-                            <p>{{$story->titre}}</p>
-                            <p>{{$story->pitch}}</p>
-                            <img src="{{$story->image}}"/>
-                            <a href="{{route("storys.show", $story)}}">Voir l'histoire</a>
+                            <p>{{$histoire->titre}}</p>
+                            <p>{{$histoire->pitch}}</p>
+                            <img src="{{$histoire->image}}"/>
+                            <a href="{{route("histoires.show", $histoire)}}">Voir l'histoire</a>
                         </div>
                     @empty
                         <p>Pas de lecture en cours</p>
@@ -22,13 +22,13 @@
         @endauth
         <div class="container">
             <h2>Ses histoires</h2>
-            @forelse($user->mesHistoires as $story)
+            @forelse($user->mesHistoires as $histoire)
                 <div class="card">
-                    <img src="{{$story->image}}" alt="Image histoire"/>
-                    <p>{{$story->titre}}</p>
-                    <p>{{$story->pitch}}</p>
-                    <p>{{$story->active ? "Active" : "Non active"}}</p>
-                    <a href="{{route("storys.show", $story)}}">Voir l'histoire</a>
+                    <img src="{{$histoire->image}}" alt="Image histoire"/>
+                    <p>{{$histoire->titre}}</p>
+                    <p>{{$histoire->pitch}}</p>
+                    <p>{{$histoire->active ? "Active" : "Non active"}}</p>
+                    <a href="{{route("histoires.show", $histoire)}}">Voir l'histoire</a>
                 </div>
             @empty
                 <p>Aucune histoire créées.</p>
@@ -42,7 +42,7 @@
                         <li>
                             <strong>{{ $histoire->titre }}</strong>
                             <p>Nombre de lectures terminées : {{ $histoire->pivot->nombre}}</p>
-                            <a href="{{route("storys.show", $histoire)}}">Voir l'histoire</a>
+                            <a href="{{route("histoires.show", $histoire)}}">Voir l'histoire</a>
                         </li>
                     @endforeach
                 </ul>
@@ -58,7 +58,7 @@
                         <li>
                             <strong>{{ $avis->histoire->titre }}</strong>
                             <p>{{ $avis->contenu}}</p>
-                            <a href="{{route("storys.show", $avis->histoire)}}">Voir l'histoire</a>
+                            <a href="{{route("histoires.show", $avis->histoire)}}">Voir l'histoire</a>
                         </li>
                     @endforeach
                 </ul>

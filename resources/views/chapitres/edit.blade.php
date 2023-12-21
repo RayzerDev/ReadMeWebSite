@@ -22,6 +22,6 @@
         <a href="{{route('chapitre.show', $chapitre->id)}}" class="btn btn-secondary">Retour</a>
     </form>
     @else
-    <h1>Vous n'avez pas accès à cette page</h1>
+    <h1 style="color: black">Vous n'avez pas accès à cette page</h1>
     @endauth
 @endsection
