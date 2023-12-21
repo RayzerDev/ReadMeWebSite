@@ -18,6 +18,16 @@ body {
     src: local('Retroica'), url('"C:\Users\noemi\Downloads\retroica\Retroica.ttf"') format('ttf');
 }
 
+@font-face {
+    font-family: 'League Spartan';
+    src: local('League Spartan'), url('"C:\Users\noemi\Downloads\League_Spartan\LeagueSpartan-VariableFont_wght.ttf"') format('ttf');
+}
+
+@font-face {
+    font-family: 'League Spartan SemiBold';
+    src: local('League Spartan'), url('"C:\Users\noemi\Downloads\League_Spartan\LeagueSpartan-VariableFont_wght.ttf"') format('ttf');
+}
+
 
 main {
     min-height: 80vh;
@@ -90,6 +100,7 @@ a{
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.67);
  
 }
 
@@ -103,11 +114,58 @@ footer{
     color: white;
     text-decoration: none;
     text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+footer div {
+    flex: 1;
+    margin-right: 20px;
 }
 
 footer a{
-    color: white;
+    color:white;
+    display: block;
+    margin-bottom: 5px;
+    text-decoration: none;
 }
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer h2{
+    font-family: 'League Spartan', sans-serif;
+}
+
+
+footer img {
+    width: 200px;
+}
+
+
+footer input[type="mail"] {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 10px; /* Espace entre l'input et le bouton */
+    padding-right: 1.4rem;
+}
+
+footer button {
+    padding: 5px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    padding-inline: 0.55rem;
+    margin-left: -1.8rem;
+    padding-block: 0.25rem;
+    font-size: 1rem;
+}
+
 
 .wrapper{
     width:100vw;
