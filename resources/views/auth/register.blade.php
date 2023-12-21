@@ -1,4 +1,4 @@
-@extends("templates.app")
+<x-layout>
 
 @section('content')
 
@@ -22,4 +22,4 @@
 </div>
 </div>
 
-@endsection
+</x-layout>

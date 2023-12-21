@@ -1,7 +1,4 @@
-@extends("templates.app")
-
-@section('content')
-
+<x-layout>
 <h2> Connexion </h2>
 <img class='souligne' src="{{url('storage\images\Vector 7.png')}}">
 
@@ -17,4 +14,4 @@
     <p>Pas de compte ? <a href="{{route('register')}}" class="register">Inscrivez-vous.</a></p> 
 </div>
 </div>
-@endsection
+</x-layout>
