@@ -16,7 +16,7 @@
   <div class="carousel">
       @foreach($histoireAccueil as $h)
           <div class="slide" id="slide1">
-              <img src="{{$h->photo}}" alt="Image 1" style="width: 350px">
+              <img src="{{url($h->photo)}}" alt="Image 1" style="width: 350px">
               <div class="caption">
                   <h2>{{$h->titre}}</h2>
                   <p>{{$h->pitch}}</p>
