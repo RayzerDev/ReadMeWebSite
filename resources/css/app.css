@@ -6,17 +6,47 @@ html {
     min-height: 100%;
 }
 body {
-    /* Margin bottom by footer height */
-    margin-bottom: 30px;
-    font-family: 'Retroica', sans-serif;
+    font-family: 'League Spartan', sans-serif;
     margin: 0;
-
-
-  
+    max-width: 1800px;
+    background-color: #2C2B4A;
 }
 
+
+/* normalize */
+h1{
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+h2{
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+p {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+a {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+button {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* endnormalize */
+
 @font-face {
-    font-family: 'Retroica';
+    font-family: 'League Spartan';
     src: local('Retroica'), url('"C:\Users\noemi\Downloads\retroica\Retroica.ttf"') format('ttf');
 }
 
@@ -39,11 +69,10 @@ main {
 }
 
 footer {
- 
+    
     bottom: 0;
     width: 100%;
 
-    /* Set the fixed height of the footer here */
     height: 30px;
     background-color: #f5f5f5;
 }
@@ -52,17 +81,18 @@ footer {
 margin-bottom: 3rem;
 }
 
+/* header */
 header{
-    
-   
+
+
     top: 0;
     left: 0;
-   
-   
+
+
     width: 100%;
     height:  fit-content;
 
- 
+
 
 }
 nav{
@@ -73,7 +103,7 @@ nav{
     width: 400px;
     border-radius: 50px;
 
-  
+
 
     background-color: #2C2B4A;
 
@@ -83,8 +113,8 @@ justify-content: space-between;
 
 }
 .lignehaut{
-  
-    position: fixed;
+
+    position: absolute;
     display: flex;
     align-items: center;
     margin-top: 30px;
@@ -97,7 +127,7 @@ margin-right: 5%;
 
 }
 nav>a{
-  
+
     color: #E9E9E9;
 }
 a{
@@ -111,7 +141,7 @@ a{
     background-size: cover;
     min-height: 100vh;
     background-color: rgba(0, 0, 0, 0.67);
- 
+
 }
 
 h1{
@@ -119,19 +149,25 @@ h1{
 }
 
 footer{
-padding-left: 5%;
-padding-right: 5%;
-width: 90%;
-height:200px;
-    background-color: #CF69FF;
 
+    background-color: #CF69FF;
+    height: fit-content;
     color: white;
     text-decoration: none;
     text-transform: capitalize;
     display: flex;
-    justify-content: space-between;
+
     padding-bottom: 20px;
-  
+
+
+}
+.footer-taille{
+    margin-right: 5%;
+    margin-left: 5%;
+width: 90%;
+display: flex;
+justify-content: space-between;
+
 }
 
 
@@ -139,7 +175,9 @@ height:200px;
 footer a{
     color:white;
     display: block;
-  
+    font-weight: 100;
+    
+
     text-decoration: none;
 }
 
@@ -161,7 +199,9 @@ footer input[type="mail"] {
     border: none;
     padding: 5px;
     border-radius: 5px;
-  
+    margin-right: 10px; /* Espace entre l'input et le bouton */
+    padding-right: 1.4rem;
+    border-radius: 30px;
 }
 
 footer button {
@@ -175,6 +215,16 @@ footer button {
     margin-left: -1.8rem;
     padding-block: 0.25rem;
     font-size: 1rem;
+}
+
+
+.newsletter {
+    position: relative;
+}
+
+.newsletterbutton{
+    position: absolute;
+    right: 10px;
 }
 
 
@@ -223,17 +273,14 @@ width: 60px;
 
 }
 .basheader{
-z-index: -1;
-position: relative;
+
 }
-.basheader>h1{
-    position: absolute;
-    top:180px;
-    right:50px;
+
+.basheader h1{
     color: rgb(255, 255, 255);
     text-align: end;
     font-family: 'League Spartan', sans-serif;
-font-weight: 700;
+    font-weight: 700;
 
     font-size: 300%;
 }
@@ -309,9 +356,9 @@ padding-top: 50px;
   }
 
   button {
-   
-    
-  
+
+
+
 
   }
 
@@ -327,7 +374,7 @@ top: 50%;
 position: absolute;
 
 transform: translateY(-50%);
-font-size: 24px;  
+font-size: 24px;
 border: none;
 cursor: pointer;
   }
@@ -344,7 +391,7 @@ cursor: pointer;
    top: 50%;
 
    transform: translateY(-50%);
-   font-size: 24px;  
+   font-size: 24px;
    border: none;
    cursor: pointer;
   }
@@ -369,11 +416,11 @@ text-align: center;
 font-size: 70px;
 }
 .material-symbols-outlined{
-    font-size: 50px;  
+    font-size: 50px;
 }
 .butonindex2{
-   
- 
+
+
 
 
 
@@ -403,9 +450,9 @@ margin-right: 20%;
 height: 80%;
 }
 .noto{
-   
+
 text-align: center;
-    
+
 }
 .noto>h1{
     margin-top: 20px;
@@ -418,7 +465,7 @@ color: #E9E9E9;
 margin-top:10px;
 }
 .perso{
-       
+
 text-align: center;
 
 }
@@ -452,8 +499,8 @@ margin-top: 20px;
    font-size: 100px;
 }
 .butonindex3{
-   
- 
+
+
 
 
 
@@ -469,10 +516,10 @@ margin-top: 20px;
        font-weight: 400;
 
        margin-top: 100px;
-    
+
     margin-inline: auto;
     display: block;
-    
+
     }
     .videoroman{
         background-color: #CF69FF;
@@ -490,8 +537,8 @@ margin-inline: auto;
 width: fit-content;
 }
 .butonindex4{
-   
- 
+
+
 
 
 
@@ -507,15 +554,15 @@ width: fit-content;
        font-weight: 400;
 
        margin-top: 100px;
-    
+
     margin-inline: auto;
     display: block;
-    
+
     }
 
 .typehistoire{
     background-color: #2C2B4A;
-    padding-bottom: 50px;
+    padding-bottom: 100px
 }
 .typehistoire>h1{
     padding-top: 90px;
@@ -525,10 +572,9 @@ width: fit-content;
 .tags{
     display: flex;
     justify-content: space-between;
-    width: 900px; 
+    width: 60%;
      margin-inline: auto;
   margin-top: 30px;
-  
 }
 .tagsbtn{
     background-color: #A62FDD;
@@ -538,4 +584,88 @@ width: fit-content;
     padding-right: 40px;
     border-radius: 30px;
     font-size: 25px;
+}
+
+
+
+/* login page  */
+
+
+.form1{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px;
+}
+
+.form{
+    background-color: #1e1e32;
+    border-radius: 20px;
+    max-width: 320px;
+    padding: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form input{
+    background-color: #1e1e32;
+    border-color: rgba(255, 255, 255, 0.575);
+    border-radius: 20px;
+    margin-bottom: 15px;
+    padding: 10px;
+    color: white;
+}
+
+input[type="submit"]{
+    background-color: #CF69FF;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px ;
+}
+
+
+p{
+    color: white;
+}
+
+.register{
+    color: #CF69FF;
+    font-weight: 500;
+    text-decoration: underline;
+    font: 25px;
+}
+
+
+h2{
+    text-align: center;
+    font-style: 'League Spartan, sans-serif';
+    color: white;
+    font-size: 40px;
+    margin-bottom: -2px;
+}
+
+/******** REGISTER *******/
+
+.form1reg{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.formreg{
+    background-color: #1e1e32;
+    border-radius: 20px;
+    max-width: 320px;
+    padding: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* histoires page  */
+
+.c2c{
+    margin-top: 50px;
 }
