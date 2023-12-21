@@ -34,7 +34,7 @@
         <a href="{{route("register")}}">Register</a>
     @endauth
 </nav>
-
+<img class ="img1" src="https://images.bfmtv.com/NUJHUYUkXAYVPZAR888_w9rjrNc=/0x0:1196x1192/1196x0/images/-458880.jpg" alt="" srcset="" width="30%">
 <img class ="img2" src="/storage/app/public/images/iconecompte.png" alt="" srcset="">
 </div>
 
