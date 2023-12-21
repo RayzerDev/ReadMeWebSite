@@ -677,3 +677,84 @@ h2{
 .c2c{
     margin-top: 50px;
 }
+
+.news{
+    display: flex;
+    flex-direction: row;
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.d1 img{
+    aspect-ratio: 3/4;
+    object-fit: contain;
+    width: 300px;
+    height: 400px;
+    margin-bottom: 5%;
+}
+
+h3{
+    color: white;
+    font-size: 22px;
+    margin-left: 30px;
+    padding-top: 15px;
+}
+
+.tag{
+    color: white;
+    background-color: #CF69FF;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 20px;
+    margin-left: 28%;
+}
+
+.tag2{
+    color: white;
+    background-color: #A62FDD;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 20px;
+    margin-left: 28%;
+}
+
+select{
+    background-color: #2C2B4A;
+    border-radius: 20px;
+    border-color: white;
+    color: white;
+    padding: 8px;
+    margin-left: 25px;
+}
+
+option{
+    background-color: #CF69FF;
+}
+
+.caroussels{
+    display: flex;
+   flex-wrap: wrap;
+   width: 100%;
+    margin: auto;
+
+    justify-content: space-around;
+}
+.hiistoires {
+    width: 30%;
+}
+
+.hiistoires img{
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+}
+
+.hiistoires a{
+    color: white;
+    font-family: 'League Spartan';
+}
