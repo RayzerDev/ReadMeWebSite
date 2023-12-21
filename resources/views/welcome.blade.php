@@ -247,7 +247,6 @@ auto_stories
     document.querySelector('.carousel').style.transform = 'translateX(' + transformValue + ')';
   }
 
-  // Optionnel : Ajoutez un écouteur d'événements pour les touches du clavier
   document.addEventListener('keydown', function (event) {
     if (event.key === 'ArrowLeft') {
       changeSlide(-1);
@@ -256,7 +255,6 @@ auto_stories
     }
   });
 
-  // Affiche la première slide au chargement de la page
   showSlide(currentSlide);
 </script>
 

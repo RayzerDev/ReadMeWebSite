@@ -61,23 +61,20 @@ class HistoireController extends Controller
     }
 
     public function store(Request  $request){
-        $validatedData = $request->validate([
-            'titre' => 'required|string|max:255',
-            'pitch' => 'required|string',
-            'photo' => 'required|url'
-        ]);
         $histoire = new Histoire([
-            'titre' => $validatedData['titre'],
-            'pitch' => $validatedData['pitch'],
-            'photo' => $validatedData['photo'],
+            'titre' => $request['titre'],
+            'pitch' => $request['pitch'],
+            'photo' => $request['photo'],
             'active' =>  0,
             'user_id' => Auth::id(),
             "genre_id" =>1
         ]);
         $histoire->save();
+        return redirect()->route('histoires.encours', $histoire->id);
+    }
 
-
-        // Rediriger avec un message de succès
-        return redirect()->route('histoires.index')->with('success', 'L\'histoire a été créée avec succès.');
+    public function encours($id) {
+        $histoire= Histoire::findOrFail($id);
+        return view('histoires.encours', ['histoire' => $histoire, 'title' => "Histoire en cours de création "]);
     }
 }
