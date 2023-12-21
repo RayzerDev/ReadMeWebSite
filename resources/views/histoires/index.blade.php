@@ -48,7 +48,7 @@
 
             <div class='caroussels'>
             @foreach ($histoires as $histoire)
-            <!-- <div class='hiistoires'> -->
+
                 @if($histoire->active)
                 <div class="hiistoires">
                     <a href="{{ route('histoires.show', $histoire) }}">
@@ -57,9 +57,10 @@
                             <h5>{{ $histoire->titre }}</h5>
                         </div>
                     </a>
-
+                </div>
                 @endif
             @endforeach
+
             </div>
         </div>
 
