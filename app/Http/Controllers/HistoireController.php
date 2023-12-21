@@ -33,7 +33,8 @@ class HistoireController extends Controller
     }
 
     public function accueil(){
-        return view('welcome', ['title'=>"Accueil"]);
+        $histoireAccueil = Histoire::inRandomOrder()->take(5)->get();
+        return view('welcome', ['title'=>"Accueil" , 'histoireAccueil' => $histoireAccueil]);
     }
 
     public function afficherGenre(){
