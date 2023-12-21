@@ -2,16 +2,20 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{{isset($title) ? $title : "Page en cours"}}</title>
+    <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     @vite(["resources/css/normalize.css", 'resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-<header>Ma super application</header>
+<header>
+
+
+
 <nav>
-    <a href="{{route('storys.index')}}">Accueil</a>
-    <a href="{{route('test-vite')}}">Test Vite</a>
+    
+    <a href="/">Accueil</a>
+    <a href="{{route('histoires.index')}}">Histoires</a>
     <a href="#">Contact</a>
     <a href="{{route('equipe.index')}}">Equipe</a>
 
@@ -22,14 +26,15 @@
         <form id="logout" action="{{route("logout")}}" method="post">
             @csrf
         </form>
-    @else
-        <a href="{{route("login")}}">Login</a>
-        <a href="{{route("register")}}">Register</a>
     @endauth
 </nav>
 
+
+</header>
 <main>
     @yield("content")
+
+
 </main>
 
 <footer>IUT de Lens</footer>

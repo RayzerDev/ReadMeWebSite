@@ -47,7 +47,7 @@ class AvisController extends Controller
         $avi->contenu = $request->contenu;
         $avi->save();
 
-        return redirect()->route('storys.show', ["story" => $avi->histoire_id]);
+        return redirect()->route('histoires.show', ["histoire" => $avi->histoire_id]);
     }
 
     public function destroy(Avis $avi)

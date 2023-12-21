@@ -7,16 +7,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Redacted+Script:wght@400">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-    @vite(['resources/css/test-vite.css', 'resources/js/test-vite.js', 'resources/css/app.css'])
-    <title>{{$titre ?? "Application Laravel"}}</title>
+
+    @vite(['resources/css/test-vite.css', 'resources/js/test-vite.js', 'resources/css/app.css', 'resources/js/script.js'])
+    <title>@yield('title')</title>
 </head>
 <body>
-<header>Ma super application</header>
+
+<header>
+<div class="lignehaut">
+
+<a href="/"><img class="img1" src = "{{url('storage\images\readme.png')}}"></a>
+
 <nav>
-    <a href="{{route('storys.index')}}">Accueil</a>
-    <a href="{{route('test-vite')}}">Test Vite</a>
-    <a href="{{route('contact')}}">Contact</a>
+    <a href="{{route('accueil')}}">Accueil</a>
+    <a href="#">Thèmes</a>
+    <a href="{{route('histoires.index')}}">Histoires</a>
     <a href="{{route('equipe.index')}}">Equipe</a>
     @auth
         {{Auth::user()->name}}
@@ -25,14 +35,42 @@
         <form id="logout" action="{{route("logout")}}" method="post">
             @csrf
         </form>
-    @else
-        <a href="{{route("login")}}">Login</a>
-        <a href="{{route("register")}}">Register</a>
     @endauth
 </nav>
+<a href="{{route("login")}}"><img class="img2" src = "{{url('storage\images\iconecompte.png')}}"></a>
+
+</div>
+
+
+
+
+<section class="basheader">
+
+<h1>ReadMe, des romans qui <br> brillent dans l'ombre de la nuit.</h1>
+
+<a href=""><button class="butonindex">Passer à la lecture</button></a>
+
+
+</section>
+
+</header>
+
+
+
+
+
+
 <main class="main-container">
-    {{$slot}}
+   
+
+
+
+
+
+
+{{$slot}}
+
 </main>
-<footer>IUT de Lens</footer>
+
 </body>
 </html>
