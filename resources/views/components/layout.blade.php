@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
 
-    @vite(['resources/css/test-vite.css', 'resources/js/test-vite.js', 'resources/css/app.css', 'resources/js/script.js'])
+    @vite(['resources/css/test-vite.css', 'resources/js/test-vite.js', 'resources/css/app.css'])
     <title>@yield('title')</title>
 </head>
 <body>
@@ -27,7 +27,7 @@
     <a href="{{route('accueil')}}">Accueil</a>
     <a href="#">Thèmes</a>
     <a href="{{route('histoires.index')}}">Histoires</a>
-    <a href="{{route('equipe.index')}}">Equipe</a>
+    <a href="{{route('equipe.index')}}">Vos histoires</a>
     @auth
         {{Auth::user()->name}}
         <a href="{{route("logout")}}"
