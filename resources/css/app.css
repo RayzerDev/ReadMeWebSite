@@ -96,12 +96,17 @@ header{
 
 
 }
+
+nav a {
+    padding-left: 10px;
+}
+
 nav{
 
 
     color: #E9E9E9;
     margin: 0;
-    width: 400px;
+
     border-radius: 50px;
 
 
@@ -746,6 +751,61 @@ strong{
 }
 
 
+.tablecrea {
+    border: solid;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+margin-left:30% ;
+margin-right: 30%;
+    border-color: #A62FDD;
+
+}
+
+.formcrea label {
+    color: white;
+}
+
+.formcrea1 button {
+    border-radius: 30px;
+    background-color: #A62FDD;
+    color: white;
+    margin-bottom: 20px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+.formcrea  button {
+    border-radius: 30px;
+    background-color: #A62FDD;
+    color: white;
+    margin-bottom: 20px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.formcrea {
+    border: solid;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+margin-left:30% ;
+margin-right: 30%;
+    border-color: #A62FDD;
+}
+
+.titrecrea h1 {
+
+text-align: center;
+margin-bottom: 20px;
+}
 .news{
     display: flex;
     flex-direction: row;
@@ -825,4 +885,37 @@ option{
 .hiistoires a{
     color: white;
     font-family: 'League Spartan';
+}
+
+.couleur{
+    color: white
+}
+
+#valider{
+    background-color: #CF69FF;
+    color: white;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+}
+
+.formecreer{
+    background-color: #1e1e32;
+    border: solid 1px white;
+    border-radius: 20px;
+    max-width: 320px;
+    padding: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form5{
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 120px;
 }
