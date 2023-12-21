@@ -39,7 +39,7 @@ main {
 }
 
 footer {
-    position: absolute;
+ 
     bottom: 0;
     width: 100%;
 
@@ -119,14 +119,18 @@ h1{
 }
 
 footer{
-
+padding-left: 5%;
+padding-right: 5%;
+width: 90%;
+height:200px;
     background-color: #CF69FF;
-    height: fit-content;
+
     color: white;
     text-decoration: none;
     text-transform: capitalize;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 20px;
   
 }
 
@@ -157,8 +161,7 @@ footer input[type="mail"] {
     border: none;
     padding: 5px;
     border-radius: 5px;
-    margin-right: 10px; /* Espace entre l'input et le bouton */
-    padding-right: 1.4rem;
+  
 }
 
 footer button {
@@ -512,6 +515,7 @@ width: fit-content;
 
 .typehistoire{
     background-color: #2C2B4A;
+    padding-bottom: 50px;
 }
 .typehistoire>h1{
     padding-top: 90px;
@@ -524,6 +528,7 @@ width: fit-content;
     width: 900px; 
      margin-inline: auto;
   margin-top: 30px;
+  
 }
 .tagsbtn{
     background-color: #A62FDD;
