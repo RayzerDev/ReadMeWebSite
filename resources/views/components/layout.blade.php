@@ -26,7 +26,7 @@
 <nav>
     <a href="{{route('accueil')}}">Accueil</a>
     <a href="#">Thèmes</a>
-    <a href="{{route('storys.index')}}">Histoires</a>
+    <a href="{{route('histoires.index')}}">Histoires</a>
     <a href="{{route('equipe.index')}}">Equipe</a>
     @auth
         {{Auth::user()->name}}

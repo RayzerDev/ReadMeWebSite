@@ -29,7 +29,7 @@ class HistoireController extends Controller
         }
         $genres = Genre::all();
 
-        return view('storys.index',
+        return view('histoires.index',
             ['histoires' => $histoires, 'genre' => $genre, 'genres' => $genres, 'title'=>"Histoires"]);
 
     }
@@ -69,7 +69,7 @@ class HistoireController extends Controller
 
     public function create(){
 
-        return view('storys.create');
+        return view('histoires.create');
     }
 
     public function store(Request  $request){
@@ -93,6 +93,6 @@ class HistoireController extends Controller
 
 
         // Rediriger avec un message de succès
-        return redirect()->route('storys.index')->with('success', 'L\'histoire a été créée avec succès.');
+        return redirect()->route('histoires.index')->with('success', 'L\'histoire a été créée avec succès.');
     }
 }

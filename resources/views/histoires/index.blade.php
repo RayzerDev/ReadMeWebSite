@@ -5,9 +5,9 @@
     <div class='coups2coeur'>
         <h1>Vos coups de coeur</h1>
         <img class='souligne' src="{{url('storage\images\Vector 7.png')}}">
-        @auth<button><a href="{{route('storys.create')}}">Créer une histoire</a></button>@endauth
+        @auth<button><a href="{{route('histoires.create')}}">Créer une histoire</a></button>@endauth
         <p> <strong>Trier par genre</strong>
-        <form action="{{ route('storys.index') }}" method="get" id="filterForm">
+        <form action="{{ route('histoires.index') }}" method="get" id="filterForm">
             <div class="input-genre">
                 <div class="mb-3">
                     <select name="genre" class="form-select form-control bg-white" onchange="document.getElementById('filterForm').submit(); return false;">

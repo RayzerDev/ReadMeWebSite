@@ -15,7 +15,7 @@
 <nav>
     
     <a href="/">Accueil</a>
-    <a href="{{route('storys.index')}}">Histoires</a>
+    <a href="{{route('histoires.index')}}">Histoires</a>
     <a href="#">Contact</a>
     <a href="{{route('equipe.index')}}">Equipe</a>
 

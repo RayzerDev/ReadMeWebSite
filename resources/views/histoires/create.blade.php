@@ -1,6 +1,6 @@
 <x-layout titre="Créer une histoire">
 
-    <form action="{{ route('storys.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('histoires.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div>
             {{-- le titre --}}
