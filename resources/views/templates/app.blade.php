@@ -19,7 +19,6 @@
     <a href="{{route('histoires.index')}}">Histoires</a>
     <a href="{{route('equipe.index')}}">Vos histoires</a>
     @auth
-        {{Auth::user()->name}}
         <a href="{{route("logout")}}"
            onclick="document.getElementById('logout').submit(); return false;">Logout</a>
         <form id="logout" action="{{route("logout")}}" method="post">
