@@ -21,7 +21,7 @@
 <header>
 <div class="lignehaut">
 
-<a href="/"><img class="img1" src = "{{url('storage\images\readme_blanc.png')}}"></a>
+<a href="{{route('accueil')}}"><img class="img1" src = "{{url('storage\images\readme.png')}}"></a>
 
 <nav>
     <a href="{{route('accueil')}}">Accueil</a>
@@ -35,6 +35,7 @@
         <form id="logout" action="{{route("logout")}}" method="post">
             @csrf
         </form>
+        <a href="{{route('histoires.create')}}">Nouvelle histoire</a>
     @endauth
 </nav>
 <a href="{{route("login")}}"><img class="img2" src = "{{url('storage\images\iconecompte.png')}}"></a>
@@ -70,7 +71,42 @@
 
 {{$slot}}
 
+
+
+
 </main>
+
+<footer>
+    <div>
+        <h2>Pages</h2>
+        <a href="">Accueil</a>
+        <a href="">Thèmes</a>
+        <a href="">Histoires</a>
+        <a href="">Connexion</a>
+    </div>
+    <div>
+        <h2>Contacts</h2>
+        <a href="">Instagram</a>
+        <a href="">Facebook</a>
+        <a href="">Twitter</a>
+        <a href="">Linkedin</a>
+    </div>
+    <div>
+        <h2>Confidentialité</h2>
+        <a href="">Conditions générales</a>
+        <a href="">Vie privée</a>
+        <a href="">Mentions légales</a>
+        <a href="">Données personnelles</a>
+    </div>
+    <div>
+        <h2>Newsletter</h2>
+        <a href="{{route('histoires.index')}}"><img src = "{{url('storage\images\readme_blanc.png')}}"></a>
+        <div>
+            <input type="mail"/>
+            <button>></button>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
