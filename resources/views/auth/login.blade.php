@@ -1,13 +1,17 @@
-@extends("templates.app")
+<x-layout>
+<h2> Connexion </h2>
+<img class='souligne' src="{{url('storage\images\Vector 7.png')}}">
 
-@section('content')
 
+<div class="form1">
+<div class="form">
     <form action="{{route("login")}}" method="post">
         @csrf
         <input type="email" name="email" required placeholder="Email" /><br />
         <input type="password" name="password" required placeholder="password" /><br />
-        Remember me<input type="checkbox" name="remember"   /><br />
         <input type="submit" /><br />
     </form>
-    Pas de compte ? <a href="{{route('register')}}">Inscrivez-vous </a> !
-@endsection
+    <p>Pas de compte ? <a href="{{route('register')}}" class="register">Inscrivez-vous.</a></p> 
+</div>
+</div>
+</x-layout>

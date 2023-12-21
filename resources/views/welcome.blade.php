@@ -3,6 +3,7 @@
         Accueil
     @endsection
 
+    
 <div class="grandcarou">
 
 <h1>Vos coups de coeur</h1>
@@ -132,13 +133,13 @@ auto_stories
 
 <div class="tags">
 
-<div class="tagsbtn">Policier</div>
+<div class="tagsbtn"><a href="">Policier</a></div>
 
-<div class="tagsbtn">Romantique</div>
+<div class="tagsbtn"><a href="">Romantique</a></div>
 
-<div class="tagsbtn">Science fiction</div>
+<div class="tagsbtn"><a href="">Science fiction</a></div>
 
-<div class="tagsbtn">Fantastique</div>
+<div class="tagsbtn"><a href="">Fantastique </a></div>
 
 
 
@@ -146,51 +147,20 @@ auto_stories
 
 <div class="tags">
 
-<div class="tagsbtn">Aventure</div>
+<div class="tagsbtn"><a href="">Aventure</a></div>
 
-<div class="tagsbtn">Psychologique</div>
+<div class="tagsbtn"><a href="">Psychologique</a></div>
 
-<div class="tagsbtn">Horreur</div>
+<div class="tagsbtn"><a href="">Horreur</a></div>
 
-<div class="tagsbtn">Réaliste</div>
+<div class="tagsbtn"><a href="">Réaliste</a></div>
 
 
-
-</div>
 
 </div>
 
-<footer>
-    <div>
-        <h2>Pages</h2>
-        <a href="">Accueil</a>
-        <a href="">Thèmes</a>
-        <a href="">Histoires</a>
-        <a href="">Connexion</a>
-    </div>
-    <div>
-        <h2>Contacts</h2>
-        <a href="">Instagram</a>
-        <a href="">Facebook</a>
-        <a href="">Twitter</a>
-        <a href="">Linkedin</a>
-    </div>
-    <div>
-        <h2>Confidentialité</h2>
-        <a href="">Conditions générales</a>
-        <a href="">Vie privée</a>
-        <a href="">Mentions légales</a>
-        <a href="">Données personnelles</a>
-    </div>
-    <div>
-        <h2>Newsletter</h2>
-        <a href="{{route('histoires.index')}}"><img src = "{{url('storage\images\readme_blanc.png')}}"></a>
-        <div>
-            <input type="mail"/>
-            <button>></button>
-        </div>
-    </div>
-</footer>
+</div>
+
 
 <script>
   let currentSlide = 3;

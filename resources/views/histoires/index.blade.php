@@ -3,8 +3,18 @@
         Histoires
     @endsection
     <div class='coups2coeur'>
-        <h1>Vos coups de coeur</h1>
+        <h2 class="c2c">Vos coups de coeur</h2>
         <img class='souligne' src="{{url('storage\images\Vector 7.png')}}">
+
+        <h3>Nouveautés</h3>
+        <div class="d1">
+            <img src=""/>
+            <a href=""></a>
+        </div>
+        <div class="d2">
+            <img src=""/>
+            <a href="">
+
         @auth<button><a href="{{route('histoires.create')}}">Créer une histoire</a></button>@endauth
         <p> <strong>Trier par genre</strong>
         <form action="{{ route('histoires.index') }}" method="get" id="filterForm">
@@ -22,14 +32,14 @@
             </div>
         </form>
 
-        </p>
+        </a>
         <div class='wraper'>
             <div class='caroussel'>
             @foreach ($histoires as $histoire)
                 @if($histoire->active)
                     <a href="{{ route('histoires.show', $histoire) }}">
                         <div>
-                            <img src="{{$histoire->photo}}">
+                            <img src="{{ $histoire->photo }}">
                             <h5>{{ $histoire->titre }}</h5>
                         </div>
                     </a>
