@@ -3,6 +3,19 @@
 
 @section('content')
     <h1>Histoire {{$histoire->titre}}</h1>
+    <div>
+        <form method="POST" action="{{ route('active.toggle',  ['histoire' => $histoire]) }}">
+            @csrf
+            @method('PUT')
+
+            <input type="checkbox" name="active" {{ $histoire->active ? 'checked' : '' }}>
+            <label for="favoriCheckbox">Active</label>
+
+            <button type="submit">Enregistrer</button>
+        </form>       <a href="{{route('histoires.show', $histoire)}}" class="btn btn-secondary">Retour</a>
+
+
+    </div>
    <div style="display:grid; grid-template-columns: 1fr 1fr;">
        <div>
        <h3>Les chapitres</h3>
