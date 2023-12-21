@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HistoireController::class, 'accueil'])->name('histoire.accueil');
+Route::get('/', [HistoireController::class, 'index'])->name('storys.index');
 
 Route::get('/contact', function () {
     return view('contact');

@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Redacted+Script:wght@400">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&display=swap" rel="stylesheet">
 
     @vite(['resources/css/test-vite.css', 'resources/js/test-vite.js', 'resources/css/app.css'])
     <title>{{$titre ?? "Application Laravel"}}</title>
@@ -16,10 +19,10 @@
 <header>
 <div class="lignehaut">
 
-<a href="{{route('storys.index')}}"><img class="img1" src = "{{url('storage\images\readme.png')}}"></a>
+<a href="/"><img class="img1" src = "{{url('storage\images\readme.png')}}"></a>
 
 <nav>
-    <a href="{{route('storys.index')}}">Accueil</a>
+    <a href="/">Accueil</a>
     <a href="{{route('test-vite')}}">Test Vite</a>
     <a href="{{route('contact')}}">Contact</a>
     <a href="{{route('equipe.index')}}">Equipe</a>
@@ -92,9 +95,9 @@
     </div>
     <div>
         <h2>Newsletter</h2>
-        <a href="{{route('storys.index')}}"><img src = "{{url('storage\images\readme.png')}}"></a>
+        <a href="{{route('storys.index')}}"><img src = "{{url('storage\images\readme_blanc.png')}}"></a>
         <div>
-            <input type="search"/>
+            <input type="mail"/>
             <button>></button>
         </div>
     </div>
