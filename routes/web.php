@@ -3,6 +3,7 @@
 use App\Http\Controllers\ChapitreController;
 use App\Http\Controllers\HistoireController;
 use App\Http\Controllers\EquipeController;
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AvisController;
 use Illuminate\Support\Facades\Route;
@@ -32,3 +33,4 @@ Route::resource('avis', AvisController::class)->only(["edit", "destroy", 'update
 Route::post('/histoires/{histoire}/avis', [AvisController::class, 'store'])->name('avis.store');
 Route::resource('chapitres', ChapitreController::class);
 Route::get('encours/{id}', [HistoireController::class, 'encours'])->name('histoires.encours');
+Route::resource('/genres', GenreController::class);

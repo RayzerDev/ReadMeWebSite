@@ -22,7 +22,7 @@
 
                <div class="form-group">
                    <label for="texte">Texte</label>
-                   <textarea class="form-control" id="texte" name="texte" rows="3">le chapitre . . .</textarea>
+                   <textarea class="form-control" id="texte" name="texte" rows="3" PLACEHOLDER="le chapitre . . ."></textarea>
                </div>
                <div class="form-group">
                    <label for="media">Media</label>
