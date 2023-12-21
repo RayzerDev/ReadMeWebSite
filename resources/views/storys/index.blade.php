@@ -1,13 +1,16 @@
-
-<x-layout titre="Liste des Histoires">
-    <div>
-        <h1>Liste des Histoires</h1>
+<x-layout>
+    @section('title')
+        Histoires
+    @endsection
+    <div class='coups2coeur'>
+        <h1>Vos coups de coeur</h1>
+        <img class='souligne' src="{{url('storage\images\Vector 7.png')}}">
         @auth<button><a href="{{route('storys.create')}}">Créer une histoire</a></button>@endauth
         <p> <strong>Trier par genre</strong>
         <form action="{{ route('storys.index') }}" method="get" id="filterForm">
             <div class="input-genre">
                 <div class="mb-3">
-                    <select name="genre" class="form-select form-control bg-white">
+                    <select name="genre" class="form-select form-control bg-white" onchange="document.getElementById('filterForm').submit(); return false;">
                         <option value="All" @if($genre == 'All') selected @endif>-- Tout les genres --</option>
                         @foreach($genres as $genreOption)
                             <option value="{{ $genreOption->id }}" @if($genre == $genreOption->id) selected @endif>
@@ -17,11 +20,11 @@
                     </select>
                 </div>
             </div>
-            <input type="submit" value="OK">
         </form>
 
         </p>
-        <div>
+        <div class='wraper'>
+            <div class='caroussel'>
             @foreach ($histoires as $histoire)
                 @if($histoire->active)
                     <a href="{{ route('storys.show', $histoire->id) }}">
@@ -32,6 +35,7 @@
                     </a>
                 @endif
             @endforeach
+            </div>
         </div>
     </div>
 </x-layout>

@@ -13,4 +13,7 @@
                  <a href="{{route('chapitres.show', $c->pivot->chapitre_destination_id)}}">{{$c->pivot->reponse}}</a>
              </li>
         @endforeach
+    </ul>
+        <a href="{{route('chapitres.edit', $chapitre->id)}}">Editer le chapitre</a>
+    </div>
 @endsection
