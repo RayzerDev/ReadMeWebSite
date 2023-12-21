@@ -33,9 +33,6 @@
         <form id="logout" action="{{route("logout")}}" method="post">
             @csrf
         </form>
-    @else
-        <a href="{{route("login")}}">Login</a>
-        <a href="{{route("register")}}">Register</a>
     @endauth
 </nav>
 <a href="{{route("login")}}"><img class="img2" src = "{{url('storage\images\iconecompte.png')}}"></a>
