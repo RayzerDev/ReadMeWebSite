@@ -27,10 +27,19 @@
     <a href="{{route('accueil')}}">Accueil</a>
     <a href="{{ route('genres.index') }}">Thèmes</a>
     <a href="{{route('histoires.index')}}">Histoires</a>
-    <a href="{{route('equipe.index')}}">Vos histoires</a>
+    <a href="{{route('histoires.create')}}">Nouvelle histoire</a>
 </nav>
-<a href="{{route("user.show", Auth::user())}}"><img class="img2" src = "{{url('storage\images\iconecompte.png')}}"></a>
-
+@auth
+    <a href="{{route("user.show", Auth::user())}}"><img class="img2" src = "{{url('storage\images\iconecompte.png')}}"></a>
+    <a href="{{route("logout")}}"
+       onclick="document.getElementById('logout').submit(); return false;">Logout</a>
+    <form id="logout" action="{{route("logout")}}" method="post">
+        @csrf
+    </form>
+@endauth
+    @guest
+        <a href="{{route("login")}}"><img class="img2" src = "{{url('storage\images\iconecompte.png')}}"></a>
+    @endguest
 </div>
 
 
