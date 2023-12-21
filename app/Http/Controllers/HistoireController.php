@@ -38,6 +38,10 @@ class HistoireController extends Controller
         return view('welcome', ['title'=>"Accueil"]);
     }
 
+    public function afficherGenre(){
+
+    }
+
     public function show($idHistoire){
         $histoire = Histoire::find($idHistoire);
         $terminees = $histoire->terminees;
