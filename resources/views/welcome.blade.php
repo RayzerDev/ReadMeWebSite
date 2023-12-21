@@ -86,7 +86,7 @@ star
 
 
 
-<a href=""><button class="butonindex2">Tenter l'exprience</button></a>
+<a href=""><button class="butonindex2">Tenter l'expérience</button></a>
 
 <h1>Créez votre propre histoire</h1>
 
@@ -125,7 +125,7 @@ auto_stories
   
   
 </div>
-    <a href=""><button class="butonindex2">Tenter l'exprience</button></a>
+    <a href=""><button class="butonindex2">Créer mon histoire</button></a>
 
 
 
@@ -133,7 +133,7 @@ auto_stories
 
 </div><div class="videoroman">
 
-<h1>Interviews de l'auteur de ...</h1>
+<h1>Interview de l'auteur de "Un destin inattendu"</h1>
 
 
 

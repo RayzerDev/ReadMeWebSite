@@ -30,6 +30,7 @@ p {
     font-family: 'League Spartan', sans-serif;
     font-weight: 700;
     font-size: 16px;
+    color: white;
 }
 
 a {
@@ -633,9 +634,9 @@ input[type="submit"]{
 }
 
 
-p{
+/* p{
     color: white;
-}
+} */
 
 .register{
     color: #CF69FF;
@@ -677,3 +678,70 @@ h2{
 .c2c{
     margin-top: 50px;
 }
+.tagdiff{
+
+    color: white;
+    background-color: #A62FDD;
+    border-radius: 30px;
+    margin: 0;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+.tagdiff >h5 {
+    margin: 0;
+}
+
+.theme{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-inline: auto;
+    margin-top: 30px;
+}
+.texte-theme{
+    color: #ffffff;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.histoiregenre{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.genreboucleshow{
+    width: 30%;
+}
+.genreboucleshow img{
+    width: 100%;
+
+    aspect-ratio: 3/4;
+    object-fit:cover;
+
+    border-radius: 25px;
+    
+}
+
+.titregenre{
+    text-align: center;
+    font-size: 40px;
+    margin-top: 45px;
+}
+
+.souligne{
+    padding-bottom: 20px;
+}
+
+.texteedit{
+}
+
+strong{
+
+}
+
