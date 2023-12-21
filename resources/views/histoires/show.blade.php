@@ -2,7 +2,7 @@
     <h1>Le détail d'une histoire</h1>
     <div>
         <p><strong>Le nom de la histoire :</strong> {{ $histoire->titre }}</p>
-        <img src="{{$histoire->photo}}">
+        <img src="{{$histoire->photo}}" >
         <p>
             <strong>Pitch:</strong> {{ $histoire->pitch }}<br>
         <form method="POST" action="{{ route('active.toggle',  ['histoire' => $histoire]) }}">
