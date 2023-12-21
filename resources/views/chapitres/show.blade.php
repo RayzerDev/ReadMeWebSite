@@ -15,6 +15,7 @@
         @endforeach
     </ul>
         <ul>
+            <strong>Page visitée :</strong>
             @forelse($en_cour as $act)
                 <li>
                     <p>{{ $act }}</p>
