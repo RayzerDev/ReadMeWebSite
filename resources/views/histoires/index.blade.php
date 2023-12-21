@@ -32,7 +32,7 @@
             </div>
         </form>
 
-        </p>
+        </a>
         <div class='wraper'>
             <div class='caroussel'>
             @foreach ($histoires as $histoire)
