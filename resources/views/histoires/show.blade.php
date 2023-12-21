@@ -5,15 +5,6 @@
         <img src="{{$histoire->photo}}">
         <p>
             <strong>Pitch:</strong> {{ $histoire->pitch }}<br>
-        <form method="POST" action="{{ route('active.toggle',  ['histoire' => $histoire]) }}">
-            @csrf
-            @method('PUT')
-
-            <input type="checkbox" name="active" {{ $histoire->active ? 'checked' : '' }}>
-            <label for="favoriCheckbox">Active</label>
-
-            <button type="submit">Enregistrer</button>
-        </form>
             <strong>Le nombre de lecture terminée:</strong> {{ $histoire->terminee }}<br>
             <strong>Le nombre d'avis:</strong> {{ $histoire->avis->count() }}<br>
             <strong>Ecrit par :</strong> <a href="{{route("user.show",[$histoire->user])}}">{{ $histoire->user->name }}</a><br>
