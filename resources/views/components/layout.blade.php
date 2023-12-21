@@ -10,8 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-    @vite(['resources/css/test-vite.css', 'resources/js/test-vite.js', 'resources/css/app.css'])
+
+    @vite(['resources/css/test-vite.css', 'resources/js/test-vite.js', 'resources/css/app.css', 'resources/js/script.js'])
     <title>@yield('title')</title>
 </head>
 <body>
@@ -69,36 +71,6 @@
 {{$slot}}
 
 </main>
-<footer>
-    <div>
-        <h2>Pages</h2>
-        <a href="">Accueil</a>
-        <a href="">Thèmes</a>
-        <a href="">Histoires</a>
-        <a href="">Connexion</a>
-    </div>
-    <div>
-        <h2>Contacts</h2>
-        <a href="">Instagram</a>
-        <a href="">Facebook</a>
-        <a href="">Twitter</a>
-        <a href="">Linkedin</a>
-    </div>
-    <div>
-        <h2>Confidentialité</h2>
-        <a href="">Conditions générales</a>
-        <a href="">Vie privée</a>
-        <a href="">Mentions légales</a>
-        <a href="">Données personnelles</a>
-    </div>
-    <div>
-        <h2>Newsletter</h2>
-        <a href="{{route('storys.index')}}"><img src = "{{url('storage\images\readme_blanc.png')}}"></a>
-        <div>
-            <input type="mail"/>
-            <button>></button>
-        </div>
-    </div>
-</footer>
+
 </body>
 </html>
