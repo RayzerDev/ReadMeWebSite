@@ -3,6 +3,7 @@
 use App\Http\Controllers\ChapitreController;
 use App\Http\Controllers\HistoireController;
 use App\Http\Controllers\EquipeController;
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AvisController;
 use Illuminate\Support\Facades\Route;
@@ -34,3 +35,4 @@ Route::resource('chapitres', ChapitreController::class);
 Route::get('encours/{id}', [HistoireController::class, 'encours'])->name('histoires.encours');
 Route::delete('liaisons', [ChapitreController::class,'deleteLiaison'])->name("liaisons.delete");
 Route::post('liaisons', [ChapitreController::class, 'storeLiaison'])->name("liaisons.store");
+Route::resource('/genres', GenreController::class);

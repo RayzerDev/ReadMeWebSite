@@ -25,18 +25,9 @@
 
 <nav>
     <a href="{{route('accueil')}}">Accueil</a>
-    <a href="#">Thèmes</a>
+    <a href="{{ route('genres.index') }}">Thèmes</a>
     <a href="{{route('histoires.index')}}">Histoires</a>
     <a href="{{route('equipe.index')}}">Vos histoires</a>
-    @auth
-        {{Auth::user()->name}}
-        <a href="{{route("logout")}}"
-           onclick="document.getElementById('logout').submit(); return false;">Logout</a>
-        <form id="logout" action="{{route("logout")}}" method="post">
-            @csrf
-        </form>
-        <a href="{{route('histoires.create')}}">Nouvelle histoire</a>
-    @endauth
 </nav>
 <a href="{{route("login")}}"><img class="img2" src = "{{url('storage\images\iconecompte.png')}}"></a>
 
@@ -62,7 +53,7 @@
 
 
 <main class="main-container">
-   
+
 
 
 
@@ -84,7 +75,7 @@
         <a href="">Thèmes</a>
         <a href="">Histoires</a>
         <a href="">Connexion</a>
-        
+
     </div>
     <div>
         <h2>Contacts</h2>
