@@ -16,11 +16,12 @@
 
 
     </div>
-   <div style="display:grid; grid-template-columns: 1fr 1fr;">
-       <div>
-       <h1>Les chapitres</h1>
+   <div class="titrecrea">
+   <h1>Les chapitres</h1>
+       <div class="tablecrea">
+      
            <h2>Créer un chapitre</h2>
-           <table>
+           <table >
                <thead>
                <tr>
                    <th>ID</th>
@@ -41,7 +42,7 @@
                </tbody>
            </table>
 
-           <form action="{{ route('chapitres.store')}}" method="POST">
+           <form action="{{ route('chapitres.store')}}" method="POST"  class="formcrea1">
                @csrf
                <input type="hidden" value="{{$histoire->id}}" name="histoire_id">
                <div class="form-group">
@@ -73,9 +74,9 @@
                <button type="submit" class="btn btn-primary">Valider</button>
            </form>
    </div>
-<div>
-   <h3>Les liaisons</h3>
-    <form action="{{ route('liaisons.store')}}" method="POST">
+<div class="titrecrea">
+   <h1>Les liaisons</h1>
+    <form action="{{ route('liaisons.store')}}" method="POST" class="formcrea">
         @csrf
         <label for="choix">Source :</label>
         <select id="source" name="source">
