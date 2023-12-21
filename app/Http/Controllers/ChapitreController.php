@@ -45,6 +45,7 @@ class ChapitreController extends Controller
         $chapitre ->titre =  $request->titre;
         $chapitre ->titrecourt =  $request->titrecourt;
         $chapitre ->texte = $request->texte;
+        $chapitre ->question = $request->question;
         $chapitre ->media = $request->media;
         $chapitre ->histoire_id = $request->histoire_id;
         $chapitre ->premier = $request->premier ?? false;
