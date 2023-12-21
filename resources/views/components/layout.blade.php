@@ -52,8 +52,21 @@
 </section>
 
 </header>
+
+
+
+
+
+
 <main class="main-container">
-    {{$slot}}
+   
+
+
+
+
+
+
+{{$slot}}
 </main>
 <footer>
     <div>
