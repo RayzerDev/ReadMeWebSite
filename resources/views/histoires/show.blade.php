@@ -14,11 +14,9 @@
     <div>
         @forelse($histoire->avis as $avis)
             <div class="d-flex flex-start mt-4">
-                <img class="rounded-circle shadow-1-strong me-3"
-                 src="{{asset("storage/" . $avis->user->avatar)}}" alt="avatar" width="65"
-                 height="65" />
                 <div class="flex-grow-1 flex-shrink-1">
                     <div>
+                        <img class="img2" src = "{{url('storage\images\iconecompte.png')}}">
                         <div class="d-flex justify-content-between align-items-center">
                             <p class="mb-1">
                                 {{$avis->user->name}}
