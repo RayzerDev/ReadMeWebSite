@@ -32,13 +32,22 @@ class ChapitreController extends Controller
         return view('chapitres.create', ['title' => "Créer un chapitre"]);
     }
 
-    public function store(Request $request){
+    public function store(Request $request, $id){
+        $histoire = Histoire::findOrFail($id);
+        $this->validate($request, [
+            'titre' => 'required',
+            'titrecourt' => 'required',
+            'texte' => 'required',
+        ]);
+
         $chapitre = new Chapitre();
         $chapitre ->titre =  $request->titre;
         $chapitre ->titrecourt =  $request->titrecourt;
         $chapitre ->texte = $request->texte;
         $chapitre ->media = $request->media;
+        $chapitre -> histoire()->associate($histoire);
+        $chapitre -> premier = $request->premier;
         $chapitre ->save();
-        return view('chapitres.show', ['chapitre' => $chapitre, 'title' => $chapitre->titrecourt]);
+        return view('chapitres.show', ['chapitre' => $chapitre, 'title' => $chapitre->titrecourt])->with('msg', 'Chapitre créé avec succès !');
     }
 }

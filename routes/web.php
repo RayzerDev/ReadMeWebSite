@@ -32,6 +32,8 @@ Route::resource("equipe", EquipeController::class)->only("index");
 Route::resource('user', UserController::class)->only('show')->middleware(['auth']);
 Route::get('chapitre/{id}', [ChapitreController::class, 'show'])->name('chapitres.show');
 Route::get('chapitre/{id}/edit', [ChapitreController::class, 'edit'])->name('chapitres.edit');
+Route::get('chapitre/{id}/edit', [ChapitreController::class, 'edit'])->name('chapitres.edit');
 Route::resource('avis', AvisController::class)->only(["edit", "destroy", 'update']);
 Route::post('/storys/{histoire}/avis', [AvisController::class, 'store'])->name('avis.store');
 Route::resource('chapitre', ChapitreController::class);
+Route::get('/encours/{histoire}', [ChapitreController::class, 'create'])->name('chapitres.create');
