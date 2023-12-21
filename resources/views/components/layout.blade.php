@@ -70,7 +70,12 @@
 
 {{$slot}}
 
+
+
+
 </main>
+
+
 
 </body>
 </html>

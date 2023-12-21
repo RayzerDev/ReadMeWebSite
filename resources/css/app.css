@@ -15,6 +15,35 @@ body {
   
 }
 
+
+/* normalize */
+h1{
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+h2{
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+p {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+a {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+
+/* endnormalize */
+
 @font-face {
     font-family: 'Retroica';
     src: local('Retroica'), url('"C:\Users\noemi\Downloads\retroica\Retroica.ttf"') format('ttf');
@@ -39,7 +68,7 @@ main {
 }
 
 footer {
-    position: absolute;
+    
     bottom: 0;
     width: 100%;
 
@@ -512,6 +541,7 @@ width: fit-content;
 
 .typehistoire{
     background-color: #2C2B4A;
+    padding-bottom: 100px
 }
 .typehistoire>h1{
     padding-top: 90px;
@@ -521,7 +551,7 @@ width: fit-content;
 .tags{
     display: flex;
     justify-content: space-between;
-    width: 900px;
+    width: 60%;
      margin-inline: auto;
   margin-top: 30px;
 }
@@ -533,4 +563,8 @@ width: fit-content;
     padding-right: 40px;
     border-radius: 30px;
     font-size: 25px;
+}
+
+.tagsbtn a {
+    color: white;
 }
