@@ -253,3 +253,94 @@ font-size: 30px;
    font-weight: 400;
 
 }
+
+.grandcarou{
+    background-color: #2C2B4A;
+    height: auto;
+    margin-bottom: 50px;
+}
+.grandcarou>h1{
+    color: white;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 45px;
+text-align: center;
+
+padding-top: 50px;
+}
+
+
+
+
+.carousel-container {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 50px;
+  }
+
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .caption {
+    text-align: center;
+  }
+
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .prev {
+    left: 10px;
+    background-color: beige;
+   border-radius: 100%;
+   width: 70px;
+   height: 70px;
+   font-size: 40px;
+  }
+
+  .next {
+    right: 10px;
+    background-color: beige;
+   border-radius: 100%;
+   width: 70px;
+   height: 70px;
+   font-size: 40px;
+  }
+.slide>img{
+width: 400px;
+
+
+}
+.caption>p{
+  color: white;
+}
+
+h1{
+  color: white;
+}
+.caption>h2{
+color: white;
+}
