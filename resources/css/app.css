@@ -159,7 +159,17 @@ footer{
     text-decoration: none;
     text-transform: capitalize;
     display: flex;
-    justify-content: space-between;
+
+    padding-bottom: 20px;
+
+
+}
+.footer-taille{
+    margin-right: 5%;
+    margin-left: 5%;
+width: 90%;
+display: flex;
+justify-content: space-between;
 
 }
 
@@ -168,6 +178,8 @@ footer{
 footer a{
     color:white;
     display: block;
+    font-weight: 100;
+    
 
     text-decoration: none;
 }
@@ -192,6 +204,7 @@ footer input[type="mail"] {
     border-radius: 5px;
     margin-right: 10px; /* Espace entre l'input et le bouton */
     padding-right: 1.4rem;
+    border-radius: 30px;
 }
 
 footer button {
@@ -205,6 +218,16 @@ footer button {
     margin-left: -1.8rem;
     padding-block: 0.25rem;
     font-size: 1rem;
+}
+
+
+.newsletter {
+    position: relative;
+}
+
+.newsletterbutton{
+    position: absolute;
+    right: 10px;
 }
 
 

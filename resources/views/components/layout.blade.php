@@ -77,12 +77,14 @@
 </main>
 
 <footer>
-    <div>
+    <div class=" footer-taille">
+        <div>
         <h2>Pages</h2>
         <a href="">Accueil</a>
         <a href="">Thèmes</a>
         <a href="">Histoires</a>
         <a href="">Connexion</a>
+        
     </div>
     <div>
         <h2>Contacts</h2>
@@ -98,13 +100,14 @@
         <a href="">Mentions légales</a>
         <a href="">Données personnelles</a>
     </div>
-    <div>
+    <div >
         <h2>Newsletter</h2>
         <a href="{{route('histoires.index')}}"><img src = "{{url('storage\images\readme_blanc.png')}}"></a>
-        <div>
-            <input type="mail"/>
-            <button>></button>
+        <div class="newsletter">
+            <input type="mail" />
+            <button class="newsletterbutton">></button>
         </div>
+    </div>
     </div>
 </footer>
 
