@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{{isset($title) ? $title : "Page en cours"}}</title>
+    <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     @vite(["resources/css/normalize.css", 'resources/css/app.css', 'resources/js/app.js'])
@@ -15,7 +15,7 @@
 <nav>
     
     <a href="/">Accueil</a>
-    <a href="{{route('test-vite')}}">Test Vite</a>
+    <a href="{{route('storys.index')}}">Histoires</a>
     <a href="#">Contact</a>
     <a href="{{route('equipe.index')}}">Equipe</a>
 
