@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Genre;
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,8 +19,8 @@ return new class extends Migration
             $table->text('pitch');
             $table->string('photo');
             $table->boolean('active');
-            $table->foreignIdFor(\App\Models\User::class);
-            $table->foreignIdFor(\App\Models\Genre::class);
+            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(Genre::class);
         });
     }
 
