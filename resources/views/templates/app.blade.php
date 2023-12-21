@@ -14,7 +14,7 @@
 
 <nav>
     
-    <a href="/">Accueil</a>
+    <a href="{{route('accueil')}}">Accueil</a>
     <a href="{{route('histoires.index')}}">Histoires</a>
     <a href="#">Contact</a>
     <a href="{{route('equipe.index')}}">Equipe</a>
@@ -26,6 +26,7 @@
         <form id="logout" action="{{route("logout")}}" method="post">
             @csrf
         </form>
+        <a href="{{route('histoires.create')}}">Nouvelle histoire</a>
     @endauth
 </nav>
 
