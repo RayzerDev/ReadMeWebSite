@@ -26,6 +26,10 @@ Route::get('/contact', function () {
 })->name("contact");
 
 Route::resource('histoires', HistoireController::class);
+Route::middleware(['auth'])->group(function () {
+    Route::get('histoires/create', [HistoireController::class, 'create'])->name("histoires.create");
+    Route::post('histoires', [HistoireController::class, 'store'])->name("histoires.store");
+});
 Route::put('active/{histoire}', [HistoireController::class, 'toggle'])->name('active.toggle');
 Route::resource("equipe", EquipeController::class)->only("index");
 Route::resource('user', UserController::class)->only('show')->middleware(['auth']);

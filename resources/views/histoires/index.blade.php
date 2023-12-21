@@ -32,14 +32,14 @@
             </div>
         </form>
 
-        </p>
+        </a>
         <div class='wraper'>
             <div class='caroussel'>
             @foreach ($histoires as $histoire)
                 @if($histoire->active)
                     <a href="{{ route('histoires.show', $histoire) }}">
                         <div>
-                            <img src="{{$histoire->photo}}">
+                            <img src="{{ url($histoire->photo) }}">
                             <h5>{{ $histoire->titre }}</h5>
                         </div>
                     </a>

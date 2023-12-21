@@ -6,9 +6,9 @@
             <label for="titre"><strong>Le titre : </strong></label>
             <input type="text" class="form-control" id="titre" name="titre" value="{{ old('titre') }}">
         </div>
-        <div>
-            <label for="photo"><strong>La photo : </strong></label>
-            <input type="text" class="form-control" id="photo" name="photo" value="{{ old('photo') }}">
+        <div class="form-group">
+            <label for="photo"><strong>La photo: </strong></label>
+            <input type="file" name="photo" id="photo">
         </div>
         <div>
             <label for="pitch"><strong>Le pitch: </strong></label>
