@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&display=swap');
 html {
     position: relative;
     min-height: 100%;
@@ -44,7 +45,7 @@ header{
     height:  fit-content;
 
  
-  
+
 }
 nav{
     position: fixed;
@@ -52,15 +53,31 @@ nav{
     color: #E9E9E9;
     margin: 0;
     width: 400px;
-    border-radius: 25px;
-    height: 40px;
+    border-radius: 50px;
+
+    left: 50%;
+    translate: -50%;
+
     background-color: #2C2B4A;
 margin-top: 20px;
+padding: 20px;
+display: flex;
+justify-content: space-between;
 
-
+}
+.lignehaut{
+  
+    position: fixed;
+    display: flex;
+}
+nav>a{
+  
+    color: #E9E9E9;
 }
 a{
     text-decoration: none;
+    font-family: 'League Spartan', sans-serif;
+
 }
 .basheader{
     background-image: url("/storage/app/public/images/background2.jpg");

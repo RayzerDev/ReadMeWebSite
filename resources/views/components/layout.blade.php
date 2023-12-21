@@ -14,6 +14,9 @@
 <body>
 
 <header>
+<div class="lignehaut">
+
+<a href="{{route('storys.index')}}"><img src = "{{url('storage\images\readme.png')}}"></a>
 <nav>
     <a href="{{route('storys.index')}}">Accueil</a>
     <a href="{{route('test-vite')}}">Test Vite</a>
@@ -31,6 +34,10 @@
         <a href="{{route("register")}}">Register</a>
     @endauth
 </nav>
+
+<a href="{{route('storys.index')}}"><img src = "{{url('storage\images\iconecompte.png')}}"></a>
+</div>
+
 
 
 
