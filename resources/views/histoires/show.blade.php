@@ -9,7 +9,7 @@
             <strong>Le nombre d'avis:</strong> {{ $histoire->avis->count() }}<br>
             <strong>Ecrit par :</strong> <a href="{{route("user.show",[$histoire->user])}}">{{ $histoire->user->name }}</a><br>
         </p>
-        <button class='bouton'><a href="{{route('chapitres.show', $histoire->id->premier)}}">Commencer à lire</a></button>
+        <button class='bouton'><a href="{{route('chapitres.show', $histoire->premier)}}">Commencer à lire</a></button>
     </div>
     <div>
         @forelse($histoire->avis as $avis)
