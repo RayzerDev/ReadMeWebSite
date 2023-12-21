@@ -6,12 +6,26 @@ use App\Models\Chapitre;
 use App\Models\Histoire;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class ChapitreController extends Controller
 {
-    public function show($id){
+
+    public function show($id)
+    {
         $chapitre = Chapitre::findOrFail($id);
-        return view('chapitres.show', ['chapitre' => $chapitre, 'title' => $chapitre->titrecourt]);
+        $en_cour = Session::get('en_cour', []);
+
+        if ($chapitre->premier) {
+            $en_cour = [$chapitre->id];
+        } else {
+            if (!in_array($chapitre->id, $en_cour)) {
+                $en_cour[] = $chapitre->id;
+            }
+        }
+        Session::put('en_cour', $en_cour);
+
+        return view('chapitres.show', ['chapitre' => $chapitre, 'title' => $chapitre->titrecourt, 'en_cour' => $en_cour]);
     }
 
     public function edit($id){
