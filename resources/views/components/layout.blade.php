@@ -70,6 +70,7 @@
 
 
 {{$slot}}
+
 </main>
 <footer>
     <div>
