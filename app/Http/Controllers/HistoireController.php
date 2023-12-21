@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Genre;
 use App\Models\Histoire;
+use App\Models\Sport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class HistoireController extends Controller
 {
@@ -60,15 +62,29 @@ class HistoireController extends Controller
         return view('histoires.create');
     }
 
-    public function store(Request  $request){
-        $histoire = new Histoire([
-            'titre' => $request['titre'],
-            'pitch' => $request['pitch'],
-            'photo' => $request['photo'],
-            'active' =>  0,
-            'user_id' => Auth::id(),
-            "genre_id" =>1
+    public function store(Request $request){
+        $request->validate([
+            'titre' => 'required|string',
+            'pitch' => 'required|string',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+
+        $subdirectory = 'images';
+        if (!file_exists(public_path($subdirectory))) {
+            mkdir(public_path($subdirectory), 0755, true);
+        }
+
+        $uniqueFileName = uniqid().'.'.$request->file('photo')->getClientOriginalExtension();
+        $request->file('photo')->move(public_path($subdirectory), $uniqueFileName);
+        $histoire = new Histoire([
+            'titre' => $request->input('titre'),
+            'pitch' => $request->input('pitch'),
+            'photo' => $subdirectory.'/'.$uniqueFileName,
+            'active' => 0,
+            'user_id' => Auth::id(),
+            'genre_id' => 1,
+        ]);
+
         $histoire->save();
         return redirect()->route('histoires.encours', $histoire->id);
     }
@@ -77,4 +93,33 @@ class HistoireController extends Controller
         $histoire= Histoire::findOrFail($id);
         return view('histoires.encours', ['histoire' => $histoire, 'title' => "Histoire en cours de création "]);
     }
+
+public function upload(Request $request, $id) {
+    $histoire = Histoire::findOrFail($id);
+    if ($request->hasFile('photo') && $request->file('photo')->isValid()) {
+        $file = $request->file('photo');
+        Log::info("Fichier reçu : ". $file->getPathname()."/".$file->getFilename());
+    } else {
+        $msg = "Aucun fichier téléchargé";
+        return redirect()->route('histoires.show', [$histoire->id])
+            ->with('type', 'primary')
+            ->with('msg', 'Image non modifié ('. $msg . ')');
+    }
+    $nom = 'image';
+    $now = time();
+    $nom = sprintf("%s_%d.%s", $nom, $now, $file->extension());
+
+    $file->storeAs('images', $nom);
+
+    if (isset($histoire->photo)) {
+        Log::info("Image supprimée : ". $histoire->photo);
+        Storage::delete($histoire->photo);
+    }
+    $histoire->photo = $nom;
+    $histoire->save();
+    //$file->store('docs');
+    return redirect()->route('histoires.show', [$histoire->id])
+        ->with('type', 'primary')
+        ->with('msg', 'Sport modifiée avec succès');
+}
 }
