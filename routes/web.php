@@ -18,15 +18,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HistoireController::class, 'index'])->name('storys.index');
+Route::get('/', [HistoireController::class, 'accueil'])->name('accueil');
 
 Route::get('/contact', function () {
     return view('contact');
 })->name("contact");
 
-Route::get('/test-vite', function () {
-    return view('test-vite');
-})->name("test-vite");
+Route::get('/storys', [HistoireController::class, 'index'])->name("storys.index");
 
 Route::resource('storys', HistoireController::class);
 Route::put('/active/{histoire}', [HistoireController::class, 'toggle'])->name('active.toggle');
