@@ -18,7 +18,7 @@
               <img src="{{$h->photo}}" alt="Image 1" style="width: 350px">
               <div class="caption">
                   <h2>{{$h->titre}}</h2>
-                  <p>Description 1</p>
+                  <p>{{$h->pitch}}</p>
               </div>
           </div>
       @endforeach
