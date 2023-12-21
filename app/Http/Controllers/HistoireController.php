@@ -30,8 +30,12 @@ class HistoireController extends Controller
         $genres = Genre::all();
 
         return view('storys.index',
-            ['histoires' => $histoires, 'genre' => $genre, 'genres' => $genres]);
+            ['histoires' => $histoires, 'genre' => $genre, 'genres' => $genres, 'title'=>"Histoires"]);
 
+    }
+
+    public function accueil(){
+        return view('welcome', ['title'=>"Accueil"]);
     }
 
     public function show($idHistoire){
@@ -45,10 +49,6 @@ class HistoireController extends Controller
             $terminee += $user->pivot->nombre;
         }
         return view('storys.show', ['histoire' => $histoire, 'terminee' => $terminee, 'nbAvisPos' => $nbAvisPositif, 'auteur' => $auteur]);
-    }
-    public function accueil(){
-        $histoire = Histoire::inRandomOrder()->first();
-        return view('welcome', ['histoire' => $histoire]);
     }
 
     public function toggle($idHistoire)

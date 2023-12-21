@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&display=swap" rel="stylesheet">
 
     @vite(['resources/css/test-vite.css', 'resources/js/test-vite.js', 'resources/css/app.css'])
-    <title>{{$titre ?? "Application Laravel"}}</title>
+    <title>@yield('title')</title>
 </head>
 <body>
 
@@ -22,8 +22,8 @@
 <a href="/"><img class="img1" src = "{{url('storage\images\readme.png')}}"></a>
 
 <nav>
-    <a href="/">Accueil</a>
-    <a href="{{route('test-vite')}}">Test Vite</a>
+    <a href="{{route('accueil')}}">Accueil</a>
+    <a href="{{route('storys.index')}}">Histoires</a>
     <a href="{{route('contact')}}">Contact</a>
     <a href="{{route('equipe.index')}}">Equipe</a>
     @auth
