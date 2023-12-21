@@ -21,7 +21,7 @@
 <header>
 <div class="lignehaut">
 
-<a href="/"><img class="img1" src = "{{url('storage\images\readme.png')}}"></a>
+<a href="{{route('accueil')}}"><img class="img1" src = "{{url('storage\images\readme.png')}}"></a>
 
 <nav>
     <a href="{{route('accueil')}}">Accueil</a>
@@ -35,6 +35,7 @@
         <form id="logout" action="{{route("logout")}}" method="post">
             @csrf
         </form>
+        <a href="{{route('histoires.create')}}">Nouvelle histoire</a>
     @endauth
 </nav>
 <a href="{{route("login")}}"><img class="img2" src = "{{url('storage\images\iconecompte.png')}}"></a>
