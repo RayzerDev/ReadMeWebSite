@@ -2,7 +2,7 @@
     <h1>Le détail d'une histoire</h1>
     <div>
         <p><strong>Le nom de la histoire :</strong> {{ $histoire->titre }}</p>
-        <img src="{{$histoire->photo}}">
+        <img src="{{ url($histoire->photo) }}">
         <p>
             <strong>Pitch:</strong> {{ $histoire->pitch }}<br>
             <strong>Le nombre de lecture terminée:</strong> {{ $histoire->terminee }}<br>

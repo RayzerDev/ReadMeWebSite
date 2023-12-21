@@ -69,7 +69,7 @@ class HistoireController extends Controller
             'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $subdirectory = 'images';
+        $subdirectory = 'storage/histoires/images';
         if (!file_exists(public_path($subdirectory))) {
             mkdir(public_path($subdirectory), 0755, true);
         }
@@ -94,32 +94,4 @@ class HistoireController extends Controller
         return view('histoires.encours', ['histoire' => $histoire, 'title' => "Histoire en cours de création "]);
     }
 
-public function upload(Request $request, $id) {
-    $histoire = Histoire::findOrFail($id);
-    if ($request->hasFile('photo') && $request->file('photo')->isValid()) {
-        $file = $request->file('photo');
-        Log::info("Fichier reçu : ". $file->getPathname()."/".$file->getFilename());
-    } else {
-        $msg = "Aucun fichier téléchargé";
-        return redirect()->route('histoires.show', [$histoire->id])
-            ->with('type', 'primary')
-            ->with('msg', 'Image non modifié ('. $msg . ')');
-    }
-    $nom = 'image';
-    $now = time();
-    $nom = sprintf("%s_%d.%s", $nom, $now, $file->extension());
-
-    $file->storeAs('images', $nom);
-
-    if (isset($histoire->photo)) {
-        Log::info("Image supprimée : ". $histoire->photo);
-        Storage::delete($histoire->photo);
-    }
-    $histoire->photo = $nom;
-    $histoire->save();
-    //$file->store('docs');
-    return redirect()->route('histoires.show', [$histoire->id])
-        ->with('type', 'primary')
-        ->with('msg', 'Sport modifiée avec succès');
-}
 }
