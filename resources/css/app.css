@@ -12,6 +12,12 @@ body {
   
 }
 
+@font-face {
+    font-family: 'Retroica';
+    src: local('Retroica'), url('"C:\Users\noemi\Downloads\retroica\Retroica.ttf"') format('ttf');
+}
+
+
 main {
     min-height: 80vh;
     align-items: center;
@@ -72,4 +78,38 @@ a{
 
 h1{
     margin:0;
+}
+
+.wrapper{
+    width:100vw;
+    overflow: hidden;
+
+}
+
+.caroussel a{
+    display:block;
+    min-width:50%;
+    max-width:50%;
+}
+
+.caroussel{
+    display:flex;
+
+}
+
+.coups2coeur{
+    background-color: #2C2B4A;
+}
+
+.coups2coeur h1{
+    color:white;
+    text-align: center;
+    font-size: 'Retroica';
+    font-family: 'Retroica', sans-serif;
+}
+
+.souligne{
+margin-left:38rem;
+width: 15%;
+
 }
