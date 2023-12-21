@@ -40,7 +40,11 @@ a {
     font-weight: 700;
     font-size: 20px;
 }
-
+button {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
 
 /* endnormalize */
 
@@ -113,7 +117,7 @@ justify-content: space-between;
 }
 .lignehaut{
 
-    position: fixed;
+    position: absolute;
     display: flex;
     align-items: center;
     margin-top: 30px;
