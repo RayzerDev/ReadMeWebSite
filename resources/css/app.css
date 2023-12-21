@@ -281,8 +281,9 @@ width: 60px;
     text-align: end;
     font-family: 'League Spartan', sans-serif;
     font-weight: 700;
-
+padding-top: 180px;
     font-size: 300%;
+    margin-right: 40px;
 }
 
 .butonindex{
@@ -584,6 +585,13 @@ width: fit-content;
     padding-right: 40px;
     border-radius: 30px;
     font-size: 25px;
+}
+
+.tagsbtn a {
+      color: white;
+    
+
+    border-radius: 30px;
 }
 
 
