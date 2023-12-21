@@ -39,7 +39,7 @@ main {
 }
 
 footer {
- 
+    position: absolute;
     bottom: 0;
     width: 100%;
 
@@ -53,16 +53,16 @@ margin-bottom: 3rem;
 }
 
 header{
-    
-   
+
+
     top: 0;
     left: 0;
-   
-   
+
+
     width: 100%;
     height:  fit-content;
 
- 
+
 
 }
 nav{
@@ -73,18 +73,17 @@ nav{
     width: 400px;
     border-radius: 50px;
 
-  
+
 
     background-color: #2C2B4A;
-    border: linear-gradient(45deg, rgb(255, 255, 255), rgba(255, 255, 255, 0.642)) 2;
-    
+
 padding: 20px;
 display: flex;
 justify-content: space-between;
 
 }
 .lignehaut{
-  
+
     position: fixed;
     display: flex;
     align-items: center;
@@ -98,7 +97,7 @@ margin-right: 5%;
 
 }
 nav>a{
-  
+
     color: #E9E9E9;
 }
 a{
@@ -112,7 +111,7 @@ a{
     background-size: cover;
     min-height: 100vh;
     background-color: rgba(0, 0, 0, 0.67);
- 
+
 }
 
 h1{
@@ -120,19 +119,15 @@ h1{
 }
 
 footer{
-padding-left: 5%;
-padding-right: 5%;
-width: 90%;
-height:200px;
-    background-color: #CF69FF;
 
+    background-color: #CF69FF;
+    height: fit-content;
     color: white;
     text-decoration: none;
     text-transform: capitalize;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 20px;
-  
+
 }
 
 
@@ -140,7 +135,7 @@ height:200px;
 footer a{
     color:white;
     display: block;
-  
+
     text-decoration: none;
 }
 
@@ -162,7 +157,8 @@ footer input[type="mail"] {
     border: none;
     padding: 5px;
     border-radius: 5px;
-  
+    margin-right: 10px; /* Espace entre l'input et le bouton */
+    padding-right: 1.4rem;
 }
 
 footer button {
@@ -215,10 +211,6 @@ margin-top: 10px;
 
 }
 
-margin-left:38rem;
-width: 15%;
-
-}
 .img1{
     width: 150PX;
 
@@ -246,17 +238,20 @@ font-weight: 700;
 .butonindex{
     position: absolute;
     top: 350px;
-    right: 40px;
-    font-size: 30px;
+
+
+right: 40px;
+
+font-size: 30px;
     background-color: #A62FDD;
     border: none;
     padding: 5px;
-    border-radius: 30px;
-    color: white;
-    font-family: 'League Spartan', sans-serif;
-    width: 400px;
-    height: 50px;
-    font-weight: 550;
+   border-radius: 30px;
+   color: white;
+   font-family: 'League Spartan', sans-serif;
+   width: 400px;
+   height: 50px;
+   font-weight: 400;
 
 }
 
@@ -311,9 +306,9 @@ padding-top: 50px;
   }
 
   button {
-   
-    
-  
+
+
+
 
   }
 
@@ -329,7 +324,7 @@ top: 50%;
 position: absolute;
 
 transform: translateY(-50%);
-font-size: 24px;  
+font-size: 24px;
 border: none;
 cursor: pointer;
   }
@@ -346,7 +341,7 @@ cursor: pointer;
    top: 50%;
 
    transform: translateY(-50%);
-   font-size: 24px;  
+   font-size: 24px;
    border: none;
    cursor: pointer;
   }
@@ -371,11 +366,11 @@ text-align: center;
 font-size: 70px;
 }
 .material-symbols-outlined{
-    font-size: 50px;  
+    font-size: 50px;
 }
 .butonindex2{
-   
- 
+
+
 
 
 
@@ -405,9 +400,9 @@ margin-right: 20%;
 height: 80%;
 }
 .noto{
-   
+
 text-align: center;
-    
+
 }
 .noto>h1{
     margin-top: 20px;
@@ -420,7 +415,7 @@ color: #E9E9E9;
 margin-top:10px;
 }
 .perso{
-       
+
 text-align: center;
 
 }
@@ -454,8 +449,8 @@ margin-top: 20px;
    font-size: 100px;
 }
 .butonindex3{
-   
- 
+
+
 
 
 
@@ -471,10 +466,10 @@ margin-top: 20px;
        font-weight: 400;
 
        margin-top: 100px;
-    
+
     margin-inline: auto;
     display: block;
-    
+
     }
     .videoroman{
         background-color: #CF69FF;
@@ -492,8 +487,8 @@ margin-inline: auto;
 width: fit-content;
 }
 .butonindex4{
-   
- 
+
+
 
 
 
@@ -509,15 +504,14 @@ width: fit-content;
        font-weight: 400;
 
        margin-top: 100px;
-    
+
     margin-inline: auto;
     display: block;
-    
+
     }
 
 .typehistoire{
     background-color: #2C2B4A;
-    padding-bottom: 50px;
 }
 .typehistoire>h1{
     padding-top: 90px;
@@ -527,10 +521,9 @@ width: fit-content;
 .tags{
     display: flex;
     justify-content: space-between;
-    width: 900px; 
+    width: 900px;
      margin-inline: auto;
   margin-top: 30px;
-  
 }
 .tagsbtn{
     background-color: #A62FDD;
