@@ -31,9 +31,13 @@
         <a href="{{route("register")}}">Register</a>
     @endauth
 </nav>
+
+
 </header>
 <main>
     @yield("content")
+
+
 </main>
 
 <footer>IUT de Lens</footer>

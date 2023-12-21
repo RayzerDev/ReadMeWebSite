@@ -23,8 +23,8 @@
 
 <nav>
     <a href="{{route('accueil')}}">Accueil</a>
+    <a href="#">Thèmes</a>
     <a href="{{route('storys.index')}}">Histoires</a>
-    <a href="{{route('contact')}}">Contact</a>
     <a href="{{route('equipe.index')}}">Equipe</a>
     @auth
         {{Auth::user()->name}}
@@ -38,7 +38,7 @@
         <a href="{{route("register")}}">Register</a>
     @endauth
 </nav>
-<a href="{{route('storys.index')}}"><img class="img2" src = "{{url('storage\images\iconecompte.png')}}"></a>
+<a href="{{route("login")}}"><img class="img2" src = "{{url('storage\images\iconecompte.png')}}"></a>
 
 </div>
 
