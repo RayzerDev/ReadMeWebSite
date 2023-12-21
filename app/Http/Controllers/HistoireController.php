@@ -42,22 +42,12 @@ class HistoireController extends Controller
 
     }
 
-    public function show($idHistoire){
-        $histoire = Histoire::find($idHistoire);
-        $terminees = $histoire->terminees;
-        $avis = $histoire->avis->where('histoire_id', $histoire->id);
-        $terminee = 0;
-        $nbAvisPositif = $avis->count();
-        $auteur = $histoire->user->name;
-        foreach ($terminees as $user){
-            $terminee += $user->pivot->nombre;
-        }
-        return view('storys.show', ['histoire' => $histoire, 'terminee' => $terminee, 'nbAvisPos' => $nbAvisPositif, 'auteur' => $auteur]);
+    public function show(Histoire $histoire){
+        return view('histoires.show', ['histoire' => $histoire]);
     }
 
-    public function toggle($idHistoire)
+    public function toggle(Histoire $histoire)
     {
-        $histoire = Histoire::find($idHistoire);
         if ($histoire->active) {
             $histoire->active = false;
         } else {

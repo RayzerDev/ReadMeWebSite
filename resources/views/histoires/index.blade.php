@@ -27,7 +27,7 @@
             <div class='caroussel'>
             @foreach ($histoires as $histoire)
                 @if($histoire->active)
-                    <a href="{{ route('storys.show', $histoire->id) }}">
+                    <a href="{{ route('histoires.show', $histoire) }}">
                         <div>
                             <img src="{{$histoire->photo}}">
                             <h5>{{ $histoire->titre }}</h5>

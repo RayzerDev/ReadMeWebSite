@@ -8,10 +8,10 @@
                 <div>
                     @forelse($user->lectures as $histoire)
                         <div class="card">
-                            <p>{{$story->titre}}</p>
-                            <p>{{$story->pitch}}</p>
-                            <img src="{{$story->image}}"/>
-                            <a href="{{route("storys.show", $story)}}">Voir l'histoire</a>
+                            <p>{{$histoire->titre}}</p>
+                            <p>{{$histoire->pitch}}</p>
+                            <img src="{{$histoire->image}}"/>
+                            <a href="{{route("histoires.show", $histoire)}}">Voir l'histoire</a>
                         </div>
                     @empty
                         <p>Pas de lecture en cours</p>
