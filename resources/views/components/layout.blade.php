@@ -16,7 +16,8 @@
 <header>
 <div class="lignehaut">
 
-<a href="{{route('storys.index')}}"><img src = "{{url('storage\images\readme.png')}}"></a>
+<a href="{{route('storys.index')}}"><img class="img1" src = "{{url('storage\images\readme.png')}}"></a>
+
 <nav>
     <a href="{{route('storys.index')}}">Accueil</a>
     <a href="{{route('test-vite')}}">Test Vite</a>
@@ -34,8 +35,8 @@
         <a href="{{route("register")}}">Register</a>
     @endauth
 </nav>
+<a href="{{route('storys.index')}}"><img class="img2" src = "{{url('storage\images\iconecompte.png')}}"></a>
 
-<a href="{{route('storys.index')}}"><img src = "{{url('storage\images\iconecompte.png')}}"></a>
 </div>
 
 
@@ -43,6 +44,9 @@
 
 <section class="basheader">
 
+<h1>ReadMe, des romans qui <br> brillent dans l'ombre de la nuit.</h1>
+
+<a href=""><button class="butonindex">Passer à la lecture</button></a>
 
 
 </section>
