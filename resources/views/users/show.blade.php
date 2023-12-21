@@ -63,7 +63,7 @@
                     @endforeach
                 </ul>
             @else
-                <p>Aucune avis donné.</p>
+                <p>Aucun avis donné.</p>
             @endif
         </div>
     </div>

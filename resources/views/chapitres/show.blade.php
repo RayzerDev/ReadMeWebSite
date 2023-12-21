@@ -14,6 +14,18 @@
              </li>
         @endforeach
     </ul>
+        <ul>
+            @forelse($en_cour as $act)
+                <li>
+                    <p>{{ $act }}</p>
+                </li>
+            @empty
+                <li>
+                    <p>Aucun chapitre en cours.</p>
+                </li>
+            @endforelse
+        </ul>
+
         <a href="{{route('chapitres.edit', $chapitre->id)}}">Editer le chapitre</a>
     </div>
 @endsection
