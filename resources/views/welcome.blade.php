@@ -219,7 +219,7 @@ auto_stories
     </div>
     <div>
         <h2>Newsletter</h2>
-        <a href="{{route('storys.index')}}"><img src = "{{url('storage\images\readme_blanc.png')}}"></a>
+        <a href="{{route('histoires.index')}}"><img src = "{{url('storage\images\readme_blanc.png')}}"></a>
         <div>
             <input type="mail"/>
             <button>></button>
