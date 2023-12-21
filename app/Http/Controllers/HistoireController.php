@@ -27,7 +27,7 @@ class HistoireController extends Controller
         }
         $genres = Genre::all();
 
-        return view('storys.index',
+        return view('histoires.index',
             ['histoires' => $histoires, 'genre' => $genre, 'genres' => $genres, 'title'=>"Histoires"]);
 
     }
@@ -40,22 +40,12 @@ class HistoireController extends Controller
 
     }
 
-    public function show($idHistoire){
-        $histoire = Histoire::find($idHistoire);
-        $terminees = $histoire->terminees;
-        $avis = $histoire->avis->where('histoire_id', $histoire->id);
-        $terminee = 0;
-        $nbAvisPositif = $avis->count();
-        $auteur = $histoire->user->name;
-        foreach ($terminees as $user){
-            $terminee += $user->pivot->nombre;
-        }
-        return view('storys.show', ['histoire' => $histoire, 'terminee' => $terminee, 'nbAvisPos' => $nbAvisPositif, 'auteur' => $auteur]);
+    public function show(Histoire $histoire){
+        return view('histoires.show', ['histoire' => $histoire]);
     }
 
-    public function toggle($idHistoire)
+    public function toggle(Histoire $histoire)
     {
-        $histoire = Histoire::find($idHistoire);
         if ($histoire->active) {
             $histoire->active = false;
         } else {
@@ -67,7 +57,7 @@ class HistoireController extends Controller
 
     public function create(){
 
-        return view('storys.create');
+        return view('histoires.create');
     }
 
     public function store(Request  $request){
@@ -86,6 +76,8 @@ class HistoireController extends Controller
         ]);
         $histoire->save();
 
-        return redirect()->route('storys.index')->with('success', 'L\'histoire a été créée avec succès.');
+
+        // Rediriger avec un message de succès
+        return redirect()->route('histoires.index')->with('success', 'L\'histoire a été créée avec succès.');
     }
 }
