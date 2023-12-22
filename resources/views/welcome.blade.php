@@ -105,9 +105,7 @@ auto_stories
 
 
 <iframe class="videoindex" width="560" height="315" src="https://www.youtube.com/embed/UKoVRU1KeGo" frameborder="0" allowfullscreen margin="auto"></iframe>
-<a href=""><button class="butonindex4">Voir le roman</button></a>
 
-<a href=""><button class="butonindex4">Voir le roman</button></a>
 
 
 
