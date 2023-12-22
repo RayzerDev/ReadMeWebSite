@@ -104,17 +104,8 @@ auto_stories
 
 
 
-<video class="videoindex" controls width="550" height="325">
-  <source src="/media/cc0-videos/flower.webm" type="video/webm" />
-
-  <source src="/media/cc0-videos/flower.mp4" type="video/mp4" />
-
-  Download the
-  <a href="/media/cc0-videos/flower.webm">WEBM</a>
-  or
-  <a href="/media/cc0-videos/flower.mp4">MP4</a>
-  video.
-</video>
+<iframe class="videoindex" width="560" height="315" src="https://www.youtube.com/embed/UKoVRU1KeGo" frameborder="0" allowfullscreen margin="auto"></iframe>
+<a href=""><button class="butonindex4">Voir le roman</button></a>
 
 <a href=""><button class="butonindex4">Voir le roman</button></a>
 
