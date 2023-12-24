@@ -75,32 +75,6 @@ l'adresse [http://localhost:8000](http://localhost:8000)
 Chaque modification de la branche main de votre projet sur [gitlab](https://gitlab.univ-artois.fr) entraine le
 déploiement de votre site sur la machine marathon.
 
-### Création des variables d'environnement
-
-Pour que le déploiement se déroule bien, il faut configurer deux variables dans votre projet sur gitlab.
-
-- Une variable `NAME` qui doit contenir votre nom de login sur la machine marathon qui vous a été délivré en début de
-  marathon.
-- Une variable `SSH_PRIVATE_KEY` qui doit contenir votre clé privée qui a été calculée pour vous et qui se trouve dans
-  le fichier `~/.ssh/id_rsa` sur la machine marathon.
-
-Pour modifier ces 2 variables, il faut
-
-1. afficher dans votre navigateur, la page de votre projet sur gitlab.
-
-   ![](./resources/docs/images/projet_gitlab.png)
-
-2. Puis sélectionner _Paramètres_ ou _Setting_ et l'entrée _intégration et livraisons continues_ ou _CI/CD_.
-
-   ![](./resources/docs/images/entree_variables.png)
-
-3. Créez la variable `NAME`
-
-   ![](./resources/docs/images/cle_name.png)
-4. Créez la variable `SSH_PRIVATE_KEY`
-
-   ![](./resources/docs/images/cle_ssh_private_key.png)
-
 ### Commandes sur la machine marathon
 
 Lors du premier déploiement, vous devez initialiser l'environnement de votre site sur le serveur marathon.
